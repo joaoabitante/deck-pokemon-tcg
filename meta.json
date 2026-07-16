@@ -1,0 +1,2949 @@
+{
+ "updated": "2026-07-16T01:14:25.456Z",
+ "source": "Limitless TCG",
+ "sourceUrl": "https://limitlesstcg.com/decks",
+ "format": "TEF-CRI",
+ "archetypes": [
+  {
+   "rank": 1,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/dragapult.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/284",
+   "name": "Dragapult ex",
+   "points": 2227,
+   "share": "49.22%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/28236",
+    "title": "Dragapult Dusknoir",
+    "tournament": "NAIC",
+    "player": "Roman G.",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "128",
+      "qty": 4,
+      "name": "Dreepy"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "129",
+      "qty": 4,
+      "name": "Drakloak"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "130",
+      "qty": 2,
+      "name": "Dragapult ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "PRE",
+      "number": "35",
+      "qty": 2,
+      "name": "Duskull"
+     },
+     {
+      "category": "Pokémon",
+      "set": "PRE",
+      "number": "36",
+      "qty": 2,
+      "name": "Dusclops"
+     },
+     {
+      "category": "Pokémon",
+      "set": "PRE",
+      "number": "37",
+      "qty": 1,
+      "name": "Dusknoir"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "16",
+      "qty": 1,
+      "name": "Budew"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "142",
+      "qty": 1,
+      "name": "Fezandipiti ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "POR",
+      "number": "62",
+      "qty": 1,
+      "name": "Meowth ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "95",
+      "qty": 1,
+      "name": "Munkidori"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "119",
+      "qty": 4,
+      "name": "Lillie's Determination"
+     },
+     {
+      "category": "Trainer",
+      "set": "SCR",
+      "number": "133",
+      "qty": 3,
+      "name": "Crispin"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "114",
+      "qty": 2,
+      "name": "Boss's Orders"
+     },
+     {
+      "category": "Trainer",
+      "set": "PFL",
+      "number": "87",
+      "qty": 1,
+      "name": "Dawn"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "131",
+      "qty": 4,
+      "name": "Ultra Ball"
+     },
+     {
+      "category": "Trainer",
+      "set": "POR",
+      "number": "81",
+      "qty": 4,
+      "name": "Poké Pad"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "144",
+      "qty": 4,
+      "name": "Buddy-Buddy Poffin"
+     },
+     {
+      "category": "Trainer",
+      "set": "POR",
+      "number": "71",
+      "qty": 4,
+      "name": "Crushing Hammer"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "196",
+      "qty": 2,
+      "name": "Night Stretcher"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "165",
+      "qty": 1,
+      "name": "Unfair Stamp"
+     },
+     {
+      "category": "Trainer",
+      "set": "CRI",
+      "number": "82",
+      "qty": 1,
+      "name": "Special Red Card"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "150",
+      "qty": 1,
+      "name": "Handheld Fan"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "180",
+      "qty": 1,
+      "name": "Team Rocket's Watchtower"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "153",
+      "qty": 1,
+      "name": "Jamming Tower"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "5",
+      "qty": 3,
+      "name": "Psychic Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "2",
+      "qty": 3,
+      "name": "Fire Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "7",
+      "qty": 2,
+      "name": "Darkness Energy"
+     }
+    ]
+   }
+  },
+  {
+   "rank": 2,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/zoroark.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/320",
+   "name": "N's Zoroark ex",
+   "points": 363,
+   "share": "8.02%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/28257",
+    "title": "N's Zoroark",
+    "tournament": "NAIC",
+    "player": "Tord Reklev",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "97",
+      "qty": 4,
+      "name": "N's Zorua"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "98",
+      "qty": 4,
+      "name": "N's Zoroark ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "155",
+      "qty": 2,
+      "name": "N's Zekrom"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "26",
+      "qty": 1,
+      "name": "N's Darumaka"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "27",
+      "qty": 1,
+      "name": "N's Darmanitan"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "131",
+      "qty": 1,
+      "name": "Tatsugiri"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "16",
+      "qty": 1,
+      "name": "Budew"
+     },
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "88",
+      "qty": 1,
+      "name": "Yveltal"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "95",
+      "qty": 1,
+      "name": "Munkidori"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SFA",
+      "number": "39",
+      "qty": 1,
+      "name": "Pecharunt ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "142",
+      "qty": 1,
+      "name": "Fezandipiti ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "POR",
+      "number": "62",
+      "qty": 1,
+      "name": "Meowth ex"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "119",
+      "qty": 4,
+      "name": "Lillie's Determination"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "114",
+      "qty": 3,
+      "name": "Boss's Orders"
+     },
+     {
+      "category": "Trainer",
+      "set": "SSP",
+      "number": "170",
+      "qty": 2,
+      "name": "Cyrano"
+     },
+     {
+      "category": "Trainer",
+      "set": "JTG",
+      "number": "143",
+      "qty": 1,
+      "name": "Black Belt's Training"
+     },
+     {
+      "category": "Trainer",
+      "set": "JTG",
+      "number": "157",
+      "qty": 1,
+      "name": "Ruffian"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "144",
+      "qty": 4,
+      "name": "Buddy-Buddy Poffin"
+     },
+     {
+      "category": "Trainer",
+      "set": "CRI",
+      "number": "83",
+      "qty": 4,
+      "name": "Transformation Tome"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "131",
+      "qty": 3,
+      "name": "Ultra Ball"
+     },
+     {
+      "category": "Trainer",
+      "set": "JTG",
+      "number": "153",
+      "qty": 3,
+      "name": "N's PP Up"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "196",
+      "qty": 2,
+      "name": "Night Stretcher"
+     },
+     {
+      "category": "Trainer",
+      "set": "POR",
+      "number": "81",
+      "qty": 1,
+      "name": "Poké Pad"
+     },
+     {
+      "category": "Trainer",
+      "set": "CRI",
+      "number": "82",
+      "qty": 1,
+      "name": "Special Red Card"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "163",
+      "qty": 1,
+      "name": "Secret Box"
+     },
+     {
+      "category": "Trainer",
+      "set": "PRE",
+      "number": "95",
+      "qty": 2,
+      "name": "Binding Mochi"
+     },
+     {
+      "category": "Trainer",
+      "set": "JTG",
+      "number": "152",
+      "qty": 2,
+      "name": "N's Castle"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "7",
+      "qty": 7,
+      "name": "Darkness Energy"
+     }
+    ]
+   }
+  },
+  {
+   "rank": 3,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/crustle.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/341",
+   "name": "Crustle Mysterious Rock Inn",
+   "points": 278,
+   "share": "6.14%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/28252",
+    "title": "Crustle",
+    "tournament": "NAIC",
+    "player": "Rahul Reddy",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "104",
+      "qty": 4,
+      "name": "Mega Kangaskhan ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "11",
+      "qty": 3,
+      "name": "Dwebble"
+     },
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "12",
+      "qty": 3,
+      "name": "Crustle"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "119",
+      "qty": 4,
+      "name": "Lillie's Determination"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "114",
+      "qty": 4,
+      "name": "Boss's Orders"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "176",
+      "qty": 4,
+      "name": "Team Rocket's Petrel"
+     },
+     {
+      "category": "Trainer",
+      "set": "WHT",
+      "number": "84",
+      "qty": 2,
+      "name": "Hilda"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "146",
+      "qty": 2,
+      "name": "Eri"
+     },
+     {
+      "category": "Trainer",
+      "set": "SFA",
+      "number": "64",
+      "qty": 1,
+      "name": "Xerosic's Machinations"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "123",
+      "qty": 1,
+      "name": "Pokémon Center Lady"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "142",
+      "qty": 1,
+      "name": "Bianca's Devotion"
+     },
+     {
+      "category": "Trainer",
+      "set": "SSP",
+      "number": "179",
+      "qty": 1,
+      "name": "Lisia's Appeal"
+     },
+     {
+      "category": "Trainer",
+      "set": "PFL",
+      "number": "91",
+      "qty": 4,
+      "name": "Jumbo Ice Cream"
+     },
+     {
+      "category": "Trainer",
+      "set": "SVI",
+      "number": "186",
+      "qty": 3,
+      "name": "Pokégear 3.0"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "144",
+      "qty": 2,
+      "name": "Buddy-Buddy Poffin"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "131",
+      "qty": 1,
+      "name": "Ultra Ball"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "130",
+      "qty": 1,
+      "name": "Switch"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "150",
+      "qty": 1,
+      "name": "Hand Trimmer"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "152",
+      "qty": 1,
+      "name": "Hero's Cape"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "150",
+      "qty": 1,
+      "name": "Handheld Fan"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "173",
+      "qty": 1,
+      "name": "Team Rocket's Factory"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "146",
+      "qty": 1,
+      "name": "Community Center"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "149",
+      "qty": 1,
+      "name": "Festival Grounds"
+     },
+     {
+      "category": "Energy",
+      "set": "JTG",
+      "number": "159",
+      "qty": 4,
+      "name": "Spiky Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "POR",
+      "number": "86",
+      "qty": 4,
+      "name": "Growing Grass Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "TEF",
+      "number": "161",
+      "qty": 4,
+      "name": "Mist Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "1",
+      "qty": 1,
+      "name": "Grass Energy"
+     }
+    ]
+   }
+  },
+  {
+   "rank": 4,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/slowking.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/322",
+   "name": "Slowking Seek Inspiration",
+   "points": 253,
+   "share": "5.59%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/28251",
+    "title": "Slowking",
+    "tournament": "NAIC",
+    "player": "Ross Cawthon",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "SCR",
+      "number": "57",
+      "qty": 4,
+      "name": "Slowpoke"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SCR",
+      "number": "58",
+      "qty": 3,
+      "name": "Slowking"
+     },
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "104",
+      "qty": 3,
+      "name": "Mega Kangaskhan ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SSP",
+      "number": "76",
+      "qty": 2,
+      "name": "Latias ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SFA",
+      "number": "47",
+      "qty": 2,
+      "name": "Kyurem"
+     },
+     {
+      "category": "Pokémon",
+      "set": "CRI",
+      "number": "61",
+      "qty": 2,
+      "name": "Metagross"
+     },
+     {
+      "category": "Pokémon",
+      "set": "POR",
+      "number": "62",
+      "qty": 1,
+      "name": "Meowth ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "78",
+      "qty": 1,
+      "name": "Zeraora"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "56",
+      "qty": 1,
+      "name": "Lillie's Clefairy ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "142",
+      "qty": 1,
+      "name": "Fezandipiti ex"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "119",
+      "qty": 4,
+      "name": "Lillie's Determination"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "145",
+      "qty": 4,
+      "name": "Ciphermaniac's Codebreaking"
+     },
+     {
+      "category": "Trainer",
+      "set": "POR",
+      "number": "81",
+      "qty": 4,
+      "name": "Poké Pad"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "131",
+      "qty": 4,
+      "name": "Ultra Ball"
+     },
+     {
+      "category": "Trainer",
+      "set": "PFL",
+      "number": "94",
+      "qty": 3,
+      "name": "Wondrous Patch"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "196",
+      "qty": 2,
+      "name": "Night Stretcher"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "163",
+      "qty": 1,
+      "name": "Secret Box"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "130",
+      "qty": 1,
+      "name": "Switch"
+     },
+     {
+      "category": "Trainer",
+      "set": "WHT",
+      "number": "80",
+      "qty": 1,
+      "name": "Brave Bangle"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "158",
+      "qty": 1,
+      "name": "Lucky Helmet"
+     },
+     {
+      "category": "Trainer",
+      "set": "SFA",
+      "number": "54",
+      "qty": 4,
+      "name": "Academy at Night"
+     },
+     {
+      "category": "Energy",
+      "set": "POR",
+      "number": "88",
+      "qty": 4,
+      "name": "Telepathic Psychic Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "5",
+      "qty": 4,
+      "name": "Psychic Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "TWM",
+      "number": "166",
+      "qty": 3,
+      "name": "Boomerang Energy"
+     }
+    ]
+   }
+  },
+  {
+   "rank": 5,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/hydrapple.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/352",
+   "name": "Hydrapple ex",
+   "points": 219,
+   "share": "4.84%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/28266",
+    "title": "Hydrapple",
+    "tournament": "NAIC",
+    "player": "Grant Walworth",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "25",
+      "qty": 4,
+      "name": "Teal Mask Ogerpon ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "17",
+      "qty": 2,
+      "name": "Applin"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "18",
+      "qty": 2,
+      "name": "Dipplin"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SCR",
+      "number": "14",
+      "qty": 2,
+      "name": "Hydrapple ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "8",
+      "qty": 1,
+      "name": "Chikorita"
+     },
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "8",
+      "qty": 1,
+      "name": "Chikorita"
+     },
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "9",
+      "qty": 1,
+      "name": "Bayleef"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "9",
+      "qty": 1,
+      "name": "Bayleef"
+     },
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "10",
+      "qty": 2,
+      "name": "Meganium"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SCR",
+      "number": "114",
+      "qty": 1,
+      "name": "Hoothoot"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SCR",
+      "number": "115",
+      "qty": 1,
+      "name": "Noctowl"
+     },
+     {
+      "category": "Pokémon",
+      "set": "POR",
+      "number": "62",
+      "qty": 1,
+      "name": "Meowth ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "142",
+      "qty": 1,
+      "name": "Fezandipiti ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "12",
+      "qty": 1,
+      "name": "Celebi"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SFA",
+      "number": "6",
+      "qty": 1,
+      "name": "Tapu Bulu"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "119",
+      "qty": 4,
+      "name": "Lillie's Determination"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "114",
+      "qty": 2,
+      "name": "Boss's Orders"
+     },
+     {
+      "category": "Trainer",
+      "set": "PFL",
+      "number": "87",
+      "qty": 2,
+      "name": "Dawn"
+     },
+     {
+      "category": "Trainer",
+      "set": "SCR",
+      "number": "132",
+      "qty": 1,
+      "name": "Briar"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "155",
+      "qty": 1,
+      "name": "Lana's Aid"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "143",
+      "qty": 4,
+      "name": "Bug Catching Set"
+     },
+     {
+      "category": "Trainer",
+      "set": "POR",
+      "number": "81",
+      "qty": 2,
+      "name": "Poké Pad"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "131",
+      "qty": 2,
+      "name": "Ultra Ball"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "196",
+      "qty": 1,
+      "name": "Night Stretcher"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "165",
+      "qty": 1,
+      "name": "Unfair Stamp"
+     },
+     {
+      "category": "Trainer",
+      "set": "CRI",
+      "number": "82",
+      "qty": 1,
+      "name": "Special Red Card"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "117",
+      "qty": 3,
+      "name": "Forest of Vitality"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "1",
+      "qty": 14,
+      "name": "Grass Energy"
+     }
+    ]
+   }
+  },
+  {
+   "rank": 6,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/alakazam.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/350",
+   "name": "Alakazam Powerful Hand",
+   "points": 215,
+   "share": "4.75%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/28275",
+    "title": "Alakazam Dudunsparce",
+    "tournament": "NAIC",
+    "player": "Diego Cassiraga",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "54",
+      "qty": 4,
+      "name": "Abra"
+     },
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "55",
+      "qty": 4,
+      "name": "Kadabra"
+     },
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "56",
+      "qty": 3,
+      "name": "Alakazam"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "120",
+      "qty": 3,
+      "name": "Dunsparce"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TEF",
+      "number": "129",
+      "qty": 3,
+      "name": "Dudunsparce"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SSP",
+      "number": "87",
+      "qty": 1,
+      "name": "Dedenne"
+     },
+     {
+      "category": "Pokémon",
+      "set": "BLK",
+      "number": "40",
+      "qty": 1,
+      "name": "Elgyem"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SFA",
+      "number": "40",
+      "qty": 1,
+      "name": "Genesect"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "142",
+      "qty": 1,
+      "name": "Fezandipiti ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "10",
+      "qty": 1,
+      "name": "Shaymin"
+     },
+     {
+      "category": "Trainer",
+      "set": "PFL",
+      "number": "87",
+      "qty": 4,
+      "name": "Dawn"
+     },
+     {
+      "category": "Trainer",
+      "set": "WHT",
+      "number": "84",
+      "qty": 3,
+      "name": "Hilda"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "114",
+      "qty": 2,
+      "name": "Boss's Orders"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "155",
+      "qty": 1,
+      "name": "Lana's Aid"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "144",
+      "qty": 4,
+      "name": "Buddy-Buddy Poffin"
+     },
+     {
+      "category": "Trainer",
+      "set": "POR",
+      "number": "81",
+      "qty": 4,
+      "name": "Poké Pad"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "125",
+      "qty": 3,
+      "name": "Rare Candy"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "148",
+      "qty": 2,
+      "name": "Enhanced Hammer"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "168",
+      "qty": 1,
+      "name": "Sacred Ash"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "196",
+      "qty": 1,
+      "name": "Night Stretcher"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "158",
+      "qty": 1,
+      "name": "Lucky Helmet"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "150",
+      "qty": 1,
+      "name": "Handheld Fan"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "181",
+      "qty": 1,
+      "name": "Air Balloon"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "197",
+      "qty": 4,
+      "name": "Nighttime Mine"
+     },
+     {
+      "category": "Energy",
+      "set": "POR",
+      "number": "88",
+      "qty": 4,
+      "name": "Telepathic Psychic Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "5",
+      "qty": 1,
+      "name": "Psychic Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "SSP",
+      "number": "191",
+      "qty": 1,
+      "name": "Enriching Energy"
+     }
+    ]
+   }
+  },
+  {
+   "rank": 7,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/raging-bolt.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/280",
+   "name": "Raging Bolt ex",
+   "points": 159,
+   "share": "3.51%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/27922",
+    "title": "Raging Bolt Ogerpon",
+    "tournament": "NAIC",
+    "player": "Toby Clark",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "104",
+      "qty": 3,
+      "name": "Mega Kangaskhan ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "POR",
+      "number": "62",
+      "qty": 3,
+      "name": "Meowth ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "25",
+      "qty": 3,
+      "name": "Teal Mask Ogerpon ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TEF",
+      "number": "123",
+      "qty": 2,
+      "name": "Raging Bolt ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SSP",
+      "number": "76",
+      "qty": 2,
+      "name": "Latias ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "56",
+      "qty": 1,
+      "name": "Lillie's Clefairy ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "64",
+      "qty": 1,
+      "name": "Wellspring Mask Ogerpon ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TEF",
+      "number": "25",
+      "qty": 1,
+      "name": "Iron Leaves ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "142",
+      "qty": 1,
+      "name": "Fezandipiti ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SSP",
+      "number": "111",
+      "qty": 1,
+      "name": "Passimian"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SSP",
+      "number": "56",
+      "qty": 1,
+      "name": "Chien-Pao"
+     },
+     {
+      "category": "Trainer",
+      "set": "SCR",
+      "number": "133",
+      "qty": 4,
+      "name": "Crispin"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "114",
+      "qty": 2,
+      "name": "Boss's Orders"
+     },
+     {
+      "category": "Trainer",
+      "set": "SSP",
+      "number": "170",
+      "qty": 2,
+      "name": "Cyrano"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "145",
+      "qty": 1,
+      "name": "Ciphermaniac's Codebreaking"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "119",
+      "qty": 1,
+      "name": "Lillie's Determination"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "131",
+      "qty": 4,
+      "name": "Ultra Ball"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "115",
+      "qty": 4,
+      "name": "Energy Switch"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "196",
+      "qty": 2,
+      "name": "Night Stretcher"
+     },
+     {
+      "category": "Trainer",
+      "set": "SCR",
+      "number": "135",
+      "qty": 2,
+      "name": "Glass Trumpet"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "165",
+      "qty": 1,
+      "name": "Unfair Stamp"
+     },
+     {
+      "category": "Trainer",
+      "set": "SCR",
+      "number": "131",
+      "qty": 4,
+      "name": "Area Zero Underdepths"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "1",
+      "qty": 7,
+      "name": "Grass Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "4",
+      "qty": 2,
+      "name": "Lightning Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "6",
+      "qty": 2,
+      "name": "Fighting Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "5",
+      "qty": 2,
+      "name": "Psychic Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "3",
+      "qty": 1,
+      "name": "Water Energy"
+     }
+    ]
+   }
+  },
+  {
+   "rank": 8,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/ogerpon.png",
+    "https://r2.limitlesstcg.net/pokemon/gen9/ogerpon-wellspring.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/339",
+   "name": "Ogerpon Box",
+   "points": 144,
+   "share": "3.18%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/28262",
+    "title": "Ogerpon Box",
+    "tournament": "NAIC",
+    "player": "Mees Brenninkmeijer",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "104",
+      "qty": 4,
+      "name": "Mega Kangaskhan ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "POR",
+      "number": "62",
+      "qty": 3,
+      "name": "Meowth ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SSP",
+      "number": "76",
+      "qty": 2,
+      "name": "Latias ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "56",
+      "qty": 2,
+      "name": "Lillie's Clefairy ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "95",
+      "qty": 2,
+      "name": "Munkidori"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "64",
+      "qty": 1,
+      "name": "Wellspring Mask Ogerpon ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "142",
+      "qty": 1,
+      "name": "Fezandipiti ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SFA",
+      "number": "39",
+      "qty": 1,
+      "name": "Pecharunt ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "88",
+      "qty": 1,
+      "name": "Yveltal"
+     },
+     {
+      "category": "Pokémon",
+      "set": "PFL",
+      "number": "14",
+      "qty": 1,
+      "name": "Moltres"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SSP",
+      "number": "56",
+      "qty": 1,
+      "name": "Chien-Pao"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "25",
+      "qty": 1,
+      "name": "Teal Mask Ogerpon ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "121",
+      "qty": 1,
+      "name": "Koraidon ex"
+     },
+     {
+      "category": "Trainer",
+      "set": "SCR",
+      "number": "133",
+      "qty": 4,
+      "name": "Crispin"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "114",
+      "qty": 3,
+      "name": "Boss's Orders"
+     },
+     {
+      "category": "Trainer",
+      "set": "JTG",
+      "number": "146",
+      "qty": 1,
+      "name": "Brock's Scouting"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "145",
+      "qty": 1,
+      "name": "Ciphermaniac's Codebreaking"
+     },
+     {
+      "category": "Trainer",
+      "set": "SSP",
+      "number": "170",
+      "qty": 1,
+      "name": "Cyrano"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "119",
+      "qty": 1,
+      "name": "Lillie's Determination"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "131",
+      "qty": 4,
+      "name": "Ultra Ball"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "115",
+      "qty": 3,
+      "name": "Energy Switch"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "196",
+      "qty": 2,
+      "name": "Night Stretcher"
+     },
+     {
+      "category": "Trainer",
+      "set": "CRI",
+      "number": "82",
+      "qty": 1,
+      "name": "Special Red Card"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "152",
+      "qty": 1,
+      "name": "Hero's Cape"
+     },
+     {
+      "category": "Trainer",
+      "set": "SCR",
+      "number": "131",
+      "qty": 4,
+      "name": "Area Zero Underdepths"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "1",
+      "qty": 4,
+      "name": "Grass Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "ASC",
+      "number": "216",
+      "qty": 2,
+      "name": "Prism Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "7",
+      "qty": 2,
+      "name": "Darkness Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "5",
+      "qty": 2,
+      "name": "Psychic Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "3",
+      "qty": 1,
+      "name": "Water Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "6",
+      "qty": 1,
+      "name": "Fighting Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "2",
+      "qty": 1,
+      "name": "Fire Energy"
+     }
+    ]
+   }
+  },
+  {
+   "rank": 9,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/clefairy.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/326",
+   "name": "Lillie's Clefairy ex",
+   "points": 99,
+   "share": "2.19%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/28249",
+    "title": "Lillie's Clefairy",
+    "tournament": "NAIC",
+    "player": "James Kowalski",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "104",
+      "qty": 4,
+      "name": "Mega Kangaskhan ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "POR",
+      "number": "62",
+      "qty": 4,
+      "name": "Meowth ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "56",
+      "qty": 4,
+      "name": "Lillie's Clefairy ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SSP",
+      "number": "76",
+      "qty": 3,
+      "name": "Latias ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "64",
+      "qty": 2,
+      "name": "Wellspring Mask Ogerpon ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "142",
+      "qty": 2,
+      "name": "Fezandipiti ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "PFL",
+      "number": "14",
+      "qty": 1,
+      "name": "Moltres"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SSP",
+      "number": "56",
+      "qty": 1,
+      "name": "Chien-Pao"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "121",
+      "qty": 1,
+      "name": "Koraidon ex"
+     },
+     {
+      "category": "Trainer",
+      "set": "SCR",
+      "number": "133",
+      "qty": 4,
+      "name": "Crispin"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "114",
+      "qty": 3,
+      "name": "Boss's Orders"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "145",
+      "qty": 2,
+      "name": "Ciphermaniac's Codebreaking"
+     },
+     {
+      "category": "Trainer",
+      "set": "SSP",
+      "number": "170",
+      "qty": 1,
+      "name": "Cyrano"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "131",
+      "qty": 4,
+      "name": "Ultra Ball"
+     },
+     {
+      "category": "Trainer",
+      "set": "SSP",
+      "number": "175",
+      "qty": 4,
+      "name": "Dusk Ball"
+     },
+     {
+      "category": "Trainer",
+      "set": "PFL",
+      "number": "94",
+      "qty": 3,
+      "name": "Wondrous Patch"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "157",
+      "qty": 1,
+      "name": "Prime Catcher"
+     },
+     {
+      "category": "Trainer",
+      "set": "JTG",
+      "number": "151",
+      "qty": 2,
+      "name": "Lillie's Pearl"
+     },
+     {
+      "category": "Trainer",
+      "set": "SCR",
+      "number": "131",
+      "qty": 4,
+      "name": "Area Zero Underdepths"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "5",
+      "qty": 4,
+      "name": "Psychic Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "3",
+      "qty": 2,
+      "name": "Water Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "6",
+      "qty": 2,
+      "name": "Fighting Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "POR",
+      "number": "88",
+      "qty": 1,
+      "name": "Telepathic Psychic Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "2",
+      "qty": 1,
+      "name": "Fire Energy"
+     }
+    ]
+   }
+  },
+  {
+   "rank": 10,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/honchkrow.png",
+    "https://r2.limitlesstcg.net/pokemon/gen9/porygon2.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/356",
+   "name": "Rocket's Honchkrow",
+   "points": 97,
+   "share": "2.14%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/26267",
+    "title": "Rocket's Honchkrow",
+    "tournament": "NAIC",
+    "player": "Joshua Vanoverschelde",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "127",
+      "qty": 4,
+      "name": "Team Rocket's Murkrow"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "127",
+      "qty": 3,
+      "name": "Team Rocket's Honchkrow"
+     },
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "153",
+      "qty": 2,
+      "name": "Team Rocket's Porygon"
+     },
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "154",
+      "qty": 1,
+      "name": "Team Rocket's Porygon2"
+     },
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "51",
+      "qty": 2,
+      "name": "Team Rocket's Articuno"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "171",
+      "qty": 4,
+      "name": "Team Rocket's Ariana"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "170",
+      "qty": 4,
+      "name": "Team Rocket's Archer"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "174",
+      "qty": 4,
+      "name": "Team Rocket's Giovanni"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "177",
+      "qty": 4,
+      "name": "Team Rocket's Proton"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "176",
+      "qty": 4,
+      "name": "Team Rocket's Petrel"
+     },
+     {
+      "category": "Trainer",
+      "set": "POR",
+      "number": "81",
+      "qty": 4,
+      "name": "Poké Pad"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "178",
+      "qty": 4,
+      "name": "Team Rocket's Transceiver"
+     },
+     {
+      "category": "Trainer",
+      "set": "PRE",
+      "number": "127",
+      "qty": 4,
+      "name": "Roto-Stick"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "196",
+      "qty": 3,
+      "name": "Night Stretcher"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "131",
+      "qty": 1,
+      "name": "Ultra Ball"
+     },
+     {
+      "category": "Trainer",
+      "set": "SSP",
+      "number": "183",
+      "qty": 1,
+      "name": "Miracle Headset"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "173",
+      "qty": 3,
+      "name": "Team Rocket's Factory"
+     },
+     {
+      "category": "Energy",
+      "set": "DRI",
+      "number": "182",
+      "qty": 4,
+      "name": "Team Rocket's Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "WHT",
+      "number": "86",
+      "qty": 4,
+      "name": "Ignition Energy"
+     }
+    ]
+   }
+  },
+  {
+   "rank": 11,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/dipplin.png",
+    "https://r2.limitlesstcg.net/pokemon/gen9/thwackey.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/336",
+   "name": "Festival Lead",
+   "points": 73,
+   "share": "1.61%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/28371",
+    "title": "Festival Lead",
+    "tournament": "NAIC",
+    "player": "Leighton Catton",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "14",
+      "qty": 4,
+      "name": "Grookey"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "15",
+      "qty": 4,
+      "name": "Thwackey"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "16",
+      "qty": 1,
+      "name": "Rillaboom"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "17",
+      "qty": 3,
+      "name": "Applin"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "126",
+      "qty": 1,
+      "name": "Applin"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "18",
+      "qty": 4,
+      "name": "Dipplin"
+     },
+     {
+      "category": "Pokémon",
+      "set": "BLK",
+      "number": "6",
+      "qty": 1,
+      "name": "Petilil"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "7",
+      "qty": 1,
+      "name": "Lilligant"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "44",
+      "qty": 1,
+      "name": "Goldeen"
+     },
+     {
+      "category": "Pokémon",
+      "set": "PRE",
+      "number": "21",
+      "qty": 1,
+      "name": "Seaking"
+     },
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "10",
+      "qty": 1,
+      "name": "Shaymin"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "39",
+      "qty": 1,
+      "name": "Psyduck"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "119",
+      "qty": 4,
+      "name": "Lillie's Determination"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "154",
+      "qty": 2,
+      "name": "Kieran"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "114",
+      "qty": 2,
+      "name": "Boss's Orders"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "155",
+      "qty": 1,
+      "name": "Lana's Aid"
+     },
+     {
+      "category": "Trainer",
+      "set": "PFL",
+      "number": "87",
+      "qty": 1,
+      "name": "Dawn"
+     },
+     {
+      "category": "Trainer",
+      "set": "SSP",
+      "number": "174",
+      "qty": 1,
+      "name": "Drayton"
+     },
+     {
+      "category": "Trainer",
+      "set": "POR",
+      "number": "81",
+      "qty": 4,
+      "name": "Poké Pad"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "144",
+      "qty": 4,
+      "name": "Buddy-Buddy Poffin"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "143",
+      "qty": 4,
+      "name": "Bug Catching Set"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "196",
+      "qty": 2,
+      "name": "Night Stretcher"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "163",
+      "qty": 1,
+      "name": "Secret Box"
+     },
+     {
+      "category": "Trainer",
+      "set": "WHT",
+      "number": "80",
+      "qty": 2,
+      "name": "Brave Bangle"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "181",
+      "qty": 1,
+      "name": "Air Balloon"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "149",
+      "qty": 3,
+      "name": "Festival Grounds"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "1",
+      "qty": 5,
+      "name": "Grass Energy"
+     }
+    ]
+   }
+  },
+  {
+   "rank": 12,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/lucario-mega.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/345",
+   "name": "Mega Lucario ex",
+   "points": 66,
+   "share": "1.46%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/27961",
+    "title": "Mega Lucario",
+    "tournament": "NAIC",
+    "player": "Nicolai Stiborg",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "PRE",
+      "number": "50",
+      "qty": 3,
+      "name": "Riolu"
+     },
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "76",
+      "qty": 1,
+      "name": "Riolu"
+     },
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "77",
+      "qty": 3,
+      "name": "Mega Lucario ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "120",
+      "qty": 3,
+      "name": "Dunsparce"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TEF",
+      "number": "129",
+      "qty": 2,
+      "name": "Dudunsparce"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "121",
+      "qty": 1,
+      "name": "Dudunsparce ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "75",
+      "qty": 2,
+      "name": "Solrock"
+     },
+     {
+      "category": "Pokémon",
+      "set": "MEG",
+      "number": "74",
+      "qty": 2,
+      "name": "Lunatone"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "114",
+      "qty": 4,
+      "name": "Boss's Orders"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "119",
+      "qty": 4,
+      "name": "Lillie's Determination"
+     },
+     {
+      "category": "Trainer",
+      "set": "WHT",
+      "number": "84",
+      "qty": 2,
+      "name": "Hilda"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "116",
+      "qty": 4,
+      "name": "Fighting Gong"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "124",
+      "qty": 4,
+      "name": "Premium Power Pro"
+     },
+     {
+      "category": "Trainer",
+      "set": "POR",
+      "number": "81",
+      "qty": 4,
+      "name": "Poké Pad"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "131",
+      "qty": 2,
+      "name": "Ultra Ball"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "144",
+      "qty": 2,
+      "name": "Buddy-Buddy Poffin"
+     },
+     {
+      "category": "Trainer",
+      "set": "CRI",
+      "number": "82",
+      "qty": 1,
+      "name": "Special Red Card"
+     },
+     {
+      "category": "Trainer",
+      "set": "SSP",
+      "number": "177",
+      "qty": 2,
+      "name": "Gravity Mountain"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "153",
+      "qty": 1,
+      "name": "Jamming Tower"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "6",
+      "qty": 8,
+      "name": "Fighting Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "POR",
+      "number": "87",
+      "qty": 4,
+      "name": "Rocky Fighting Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "TWM",
+      "number": "167",
+      "qty": 1,
+      "name": "Legacy Energy"
+     }
+    ]
+   }
+  },
+  {
+   "rank": 13,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/mewtwo.png",
+    "https://r2.limitlesstcg.net/pokemon/gen9/spidops.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/337",
+   "name": "Rocket's Mewtwo ex",
+   "points": 47,
+   "share": "1.04%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/28254",
+    "title": "Rocket's Mewtwo",
+    "tournament": "NAIC",
+    "player": "Juho Kallama",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "19",
+      "qty": 4,
+      "name": "Team Rocket's Tarountula"
+     },
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "20",
+      "qty": 4,
+      "name": "Team Rocket's Spidops"
+     },
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "81",
+      "qty": 2,
+      "name": "Team Rocket's Mewtwo ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "87",
+      "qty": 2,
+      "name": "Team Rocket's Mimikyu"
+     },
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "51",
+      "qty": 2,
+      "name": "Team Rocket's Articuno"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "56",
+      "qty": 1,
+      "name": "Lillie's Clefairy ex"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "119",
+      "qty": 4,
+      "name": "Lillie's Determination"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "171",
+      "qty": 4,
+      "name": "Team Rocket's Ariana"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "174",
+      "qty": 3,
+      "name": "Team Rocket's Giovanni"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "177",
+      "qty": 2,
+      "name": "Team Rocket's Proton"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "176",
+      "qty": 1,
+      "name": "Team Rocket's Petrel"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "178",
+      "qty": 4,
+      "name": "Team Rocket's Transceiver"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "131",
+      "qty": 4,
+      "name": "Ultra Ball"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "196",
+      "qty": 3,
+      "name": "Night Stretcher"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "143",
+      "qty": 2,
+      "name": "Bug Catching Set"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "115",
+      "qty": 1,
+      "name": "Energy Switch"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "158",
+      "qty": 2,
+      "name": "Lucky Helmet"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "154",
+      "qty": 1,
+      "name": "Maximum Belt"
+     },
+     {
+      "category": "Trainer",
+      "set": "CRI",
+      "number": "80",
+      "qty": 2,
+      "name": "Prism Tower"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "173",
+      "qty": 1,
+      "name": "Team Rocket's Factory"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "1",
+      "qty": 6,
+      "name": "Grass Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "DRI",
+      "number": "182",
+      "qty": 4,
+      "name": "Team Rocket's Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "5",
+      "qty": 1,
+      "name": "Psychic Energy"
+     }
+    ]
+   }
+  },
+  {
+   "rank": 14,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/trevenant.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/363",
+   "name": "Hop's Trevenant",
+   "points": 36,
+   "share": "0.80%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/28367",
+    "title": "Hop's Trevenant",
+    "tournament": "NAIC",
+    "player": "Matt Walter",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "95",
+      "qty": 4,
+      "name": "Hop's Phantump"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "96",
+      "qty": 3,
+      "name": "Hop's Trevenant"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "117",
+      "qty": 2,
+      "name": "Hop's Snorlax"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "135",
+      "qty": 1,
+      "name": "Hop's Wooloo"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "136",
+      "qty": 1,
+      "name": "Hop's Dubwool"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "138",
+      "qty": 1,
+      "name": "Hop's Cramorant"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "56",
+      "qty": 1,
+      "name": "Lillie's Clefairy ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "10",
+      "qty": 1,
+      "name": "Shaymin"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "119",
+      "qty": 4,
+      "name": "Lillie's Determination"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "176",
+      "qty": 4,
+      "name": "Team Rocket's Petrel"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "114",
+      "qty": 3,
+      "name": "Boss's Orders"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "151",
+      "qty": 2,
+      "name": "Hassel"
+     },
+     {
+      "category": "Trainer",
+      "set": "SVI",
+      "number": "186",
+      "qty": 4,
+      "name": "Pokégear 3.0"
+     },
+     {
+      "category": "Trainer",
+      "set": "POR",
+      "number": "81",
+      "qty": 4,
+      "name": "Poké Pad"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "196",
+      "qty": 3,
+      "name": "Night Stretcher"
+     },
+     {
+      "category": "Trainer",
+      "set": "JTG",
+      "number": "147",
+      "qty": 2,
+      "name": "Hop's Bag"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "131",
+      "qty": 1,
+      "name": "Ultra Ball"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "130",
+      "qty": 1,
+      "name": "Switch"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "163",
+      "qty": 1,
+      "name": "Secret Box"
+     },
+     {
+      "category": "Trainer",
+      "set": "JTG",
+      "number": "148",
+      "qty": 4,
+      "name": "Hop's Choice Band"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "181",
+      "qty": 1,
+      "name": "Air Balloon"
+     },
+     {
+      "category": "Trainer",
+      "set": "JTG",
+      "number": "154",
+      "qty": 4,
+      "name": "Postwick"
+     },
+     {
+      "category": "Energy",
+      "set": "TEF",
+      "number": "161",
+      "qty": 4,
+      "name": "Mist Energy"
+     },
+     {
+      "category": "Energy",
+      "set": "POR",
+      "number": "88",
+      "qty": 4,
+      "name": "Telepathic Psychic Energy"
+     }
+    ]
+   }
+  },
+  {
+   "rank": 15,
+   "icons": [
+    "https://r2.limitlesstcg.net/pokemon/gen9/beedrill.png"
+   ],
+   "deckUrl": "https://limitlesstcg.com/decks/371",
+   "name": "Beedrill ex",
+   "points": 34,
+   "share": "0.75%",
+   "reference": {
+    "url": "https://limitlesstcg.com/decks/list/28406",
+    "title": "Beedrill",
+    "tournament": "NAIC",
+    "player": "Michael Ginchereau",
+    "cards": [
+     {
+      "category": "Pokémon",
+      "set": "CRI",
+      "number": "1",
+      "qty": 4,
+      "name": "Weedle"
+     },
+     {
+      "category": "Pokémon",
+      "set": "CRI",
+      "number": "2",
+      "qty": 4,
+      "name": "Kakuna"
+     },
+     {
+      "category": "Pokémon",
+      "set": "CRI",
+      "number": "3",
+      "qty": 4,
+      "name": "Beedrill ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "JTG",
+      "number": "120",
+      "qty": 4,
+      "name": "Dunsparce"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TEF",
+      "number": "129",
+      "qty": 3,
+      "name": "Dudunsparce"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SSP",
+      "number": "56",
+      "qty": 1,
+      "name": "Chien-Pao"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SCR",
+      "number": "118",
+      "qty": 1,
+      "name": "Fan Rotom"
+     },
+     {
+      "category": "Pokémon",
+      "set": "ASC",
+      "number": "142",
+      "qty": 1,
+      "name": "Fezandipiti ex"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "119",
+      "qty": 4,
+      "name": "Lillie's Determination"
+     },
+     {
+      "category": "Trainer",
+      "set": "PFL",
+      "number": "87",
+      "qty": 3,
+      "name": "Dawn"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "114",
+      "qty": 2,
+      "name": "Boss's Orders"
+     },
+     {
+      "category": "Trainer",
+      "set": "POR",
+      "number": "81",
+      "qty": 4,
+      "name": "Poké Pad"
+     },
+     {
+      "category": "Trainer",
+      "set": "TEF",
+      "number": "144",
+      "qty": 4,
+      "name": "Buddy-Buddy Poffin"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "131",
+      "qty": 4,
+      "name": "Ultra Ball"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "143",
+      "qty": 3,
+      "name": "Bug Catching Set"
+     },
+     {
+      "category": "Trainer",
+      "set": "TWM",
+      "number": "152",
+      "qty": 1,
+      "name": "Hyper Aroma"
+     },
+     {
+      "category": "Trainer",
+      "set": "JTG",
+      "number": "156",
+      "qty": 1,
+      "name": "Redeemable Ticket"
+     },
+     {
+      "category": "Trainer",
+      "set": "DRI",
+      "number": "168",
+      "qty": 1,
+      "name": "Sacred Ash"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "196",
+      "qty": 1,
+      "name": "Night Stretcher"
+     },
+     {
+      "category": "Trainer",
+      "set": "CRI",
+      "number": "82",
+      "qty": 1,
+      "name": "Special Red Card"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "117",
+      "qty": 4,
+      "name": "Forest of Vitality"
+     },
+     {
+      "category": "Energy",
+      "set": "MEE",
+      "number": "1",
+      "qty": 5,
+      "name": "Grass Energy"
+     }
+    ]
+   }
+  }
+ ]
+}

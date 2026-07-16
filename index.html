@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deck Builder — Pokémon TCG</title>
+<meta name="description" content="Construtor de decks de Pokémon TCG com validação de regras oficiais (Standard/Expanded) e visão do metagame atual.">
+<!--
+  REGRA DE PRIVACIDADE DESTE PROJETO (diferente do elisaofiscal.tax):
+  - Nenhum dado pessoal sai do navegador. Decks, preferências e cache ficam em
+    localStorage/IndexedDB. Não há analytics, tracker ou envio de formulário.
+  - Requisições de SAÍDA são aceitáveis e esperadas APENAS para dados públicos:
+      1) api.tcgdex.net / assets.tcgdex.net  -> banco de cartas e imagens
+      2) meta.json (mesma origem, gerado por GitHub Action a partir do Limitless TCG)
+      3) r2.limitlesstcg.net                 -> ícones de Pokémon no meta viewer
+    Nada do que o usuário digita ou monta é incluído nessas requisições, exceto o
+    termo de busca de cartas (necessário para a busca server-side do TCGdex).
+-->
+<style>
+:root{
+  --bg:#0f1115; --bg2:#171a21; --bg3:#1f2430; --border:#2c3342;
+  --fg:#e6e9f0; --fg-dim:#9aa3b5; --accent:#e8b93e; --accent2:#4e8cff;
+  --ok:#3ecf72; --warn:#e8b93e; --err:#ff5c6c;
+  --radius:10px;
+}
+[data-theme="light"]{
+  --bg:#f4f5f8; --bg2:#ffffff; --bg3:#e9ecf2; --border:#c9d0dd;
+  --fg:#1c2333; --fg-dim:#5b6577;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.45;min-height:100vh;display:flex;flex-direction:column}
+button{font:inherit;color:inherit;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:.45rem .8rem;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.primary{background:var(--accent);color:#111;border-color:var(--accent);font-weight:600}
+button.danger{border-color:var(--err);color:var(--err)}
+button:disabled{opacity:.45;cursor:not-allowed}
+input,select,textarea{font:inherit;color:var(--fg);background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:.45rem .6rem}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent2);outline-offset:-1px}
+a{color:var(--accent2)}
+header{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;padding:.7rem 1rem;background:var(--bg2);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
+header h1{font-size:1.05rem;margin-right:auto}
+header h1 small{color:var(--fg-dim);font-weight:400}
+nav.tabs{display:flex;gap:.3rem;padding:.5rem 1rem 0;background:var(--bg);border-bottom:1px solid var(--border)}
+nav.tabs button{border-radius:8px 8px 0 0;border-bottom:none;background:var(--bg2);color:var(--fg-dim)}
+nav.tabs button.active{background:var(--bg3);color:var(--fg);font-weight:600;border-color:var(--accent)}
+main{flex:1;padding:1rem;max-width:1280px;width:100%;margin:0 auto}
+.tabpane{display:none}
+.tabpane.active{display:block}
+#banner{display:none;margin:.6rem 1rem;padding:.6rem .9rem;border-radius:var(--radius);border:1px solid var(--warn);background:color-mix(in srgb,var(--warn) 12%,var(--bg));font-size:.92rem}
+#banner.err{border-color:var(--err);background:color-mix(in srgb,var(--err) 12%,var(--bg))}
+
+/* builder */
+.builder{display:grid;grid-template-columns:minmax(0,2fr) minmax(300px,1fr);gap:1rem}
+.panel{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:.9rem}
+.panel h2{font-size:.95rem;margin-bottom:.6rem;color:var(--fg-dim);text-transform:uppercase;letter-spacing:.04em}
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.5rem;margin-bottom:.7rem}
+.filters .full{grid-column:1/-1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:.6rem}
+.cardtile{position:relative;border:1px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;background:var(--bg3);aspect-ratio:63/88;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.78rem;padding:.2rem}
+.cardtile img{width:100%;height:100%;object-fit:cover;display:block}
+.cardtile:hover{border-color:var(--accent)}
+.cardtile .qtybadge{position:absolute;top:4px;right:4px;background:var(--accent);color:#111;font-weight:700;border-radius:6px;padding:0 .35rem;font-size:.8rem}
+.searchmeta{color:var(--fg-dim);font-size:.85rem;margin:.4rem 0}
+.deckbox .cats{display:flex;gap:.8rem;flex-wrap:wrap;font-size:.9rem;margin-bottom:.5rem}
+.deckbox .cats b{color:var(--accent)}
+#deckStatus{border-radius:8px;padding:.55rem .7rem;font-size:.9rem;margin-bottom:.6rem;border:1px solid var(--border)}
+#deckStatus.ok{border-color:var(--ok);color:var(--ok)}
+#deckStatus.warn{border-color:var(--warn);color:var(--warn)}
+#deckStatus.err{border-color:var(--err);color:var(--err)}
+#deckStatus ul{margin:.3rem 0 0 1.1rem;color:var(--fg)}
+.deckline{display:flex;align-items:center;gap:.45rem;padding:.28rem 0;border-bottom:1px dashed var(--border);font-size:.9rem}
+.deckline .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer}
+.deckline .nm small{color:var(--fg-dim)}
+.deckline .illegal{color:var(--err)}
+.deckline button{padding:.05rem .5rem;border-radius:6px}
+.deckgroup{margin:.5rem 0 .2rem;color:var(--fg-dim);font-size:.8rem;text-transform:uppercase}
+.deckactions{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.7rem}
+
+/* modal */
+dialog{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg2);color:var(--fg);max-width:640px;width:92vw;padding:1rem}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+.carddetail{display:flex;gap:1rem;flex-wrap:wrap}
+.carddetail img{width:220px;max-width:45vw;border-radius:10px}
+.carddetail .info{flex:1;min-width:200px;font-size:.92rem}
+.carddetail .info p{margin:.25rem 0}
+.badge{display:inline-block;border-radius:6px;padding:.05rem .5rem;font-size:.8rem;border:1px solid var(--border);margin-right:.3rem}
+.badge.ok{border-color:var(--ok);color:var(--ok)}
+.badge.err{border-color:var(--err);color:var(--err)}
+.qtyctl{display:flex;align-items:center;gap:.6rem;margin-top:.8rem}
+.qtyctl button{font-size:1.1rem;padding:.15rem .8rem}
+
+/* meta */
+.metatable{width:100%;border-collapse:collapse;font-size:.92rem}
+.metatable th,.metatable td{padding:.5rem .55rem;border-bottom:1px solid var(--border);text-align:left}
+.metatable tr:hover td{background:var(--bg3);cursor:pointer}
+.metatable img.pk{height:30px;vertical-align:middle;margin-right:2px}
+.metatable .share{font-variant-numeric:tabular-nums}
+.attrib{color:var(--fg-dim);font-size:.85rem;margin:.6rem 0}
+#metaDetail textarea{width:100%;min-height:260px;font-family:ui-monospace,Consolas,monospace;font-size:.85rem;margin:.5rem 0}
+
+/* import/export */
+.io textarea{width:100%;min-height:300px;font-family:ui-monospace,Consolas,monospace;font-size:.9rem}
+.io .row{display:flex;gap:.5rem;flex-wrap:wrap;margin:.6rem 0}
+#ioMsg{font-size:.9rem;white-space:pre-wrap}
+
+footer{padding: .8rem 1rem 1.2rem;color:var(--fg-dim);font-size:.8rem;border-top:1px solid var(--border);text-align:center}
+footer a{color:var(--fg-dim)}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid var(--fg-dim);border-top-color:transparent;border-radius:50%;animation:sp 1s linear infinite;vertical-align:-2px}
+@keyframes sp{to{transform:rotate(360deg)}}
+#testResults{font-family:ui-monospace,Consolas,monospace;font-size:.85rem;white-space:pre-wrap;padding:1rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:1rem;display:none}
+
+@media (max-width:860px){
+  .builder{grid-template-columns:1fr}
+  header h1{font-size:.95rem}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(90px,1fr))}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Deck Builder <small>Pokémon TCG</small></h1>
+  <label>Formato
+    <select id="formatSel">
+      <option value="standard">Standard</option>
+      <option value="expanded">Expanded</option>
+    </select>
+  </label>
+  <button id="refreshBtn" title="Ignora o cache local e busca dados novos">↻ Atualizar dados</button>
+  <button id="themeBtn" title="Alternar tema">☀</button>
+</header>
+
+<nav class="tabs">
+  <button data-tab="builder" class="active">Construtor</button>
+  <button data-tab="meta">Meta</button>
+  <button data-tab="io">Import / Export</button>
+</nav>
+
+<div id="banner"></div>
+
+<main>
+<div id="testResults"></div>
+
+<!-- ============ CONSTRUTOR ============ -->
+<section id="tab-builder" class="tabpane active">
+  <div class="builder">
+    <div class="panel">
+      <h2>Buscar cartas</h2>
+      <div class="filters">
+        <input id="fName" class="full" type="search" placeholder="Nome da carta (ex: Iono, Dragapult)" autocomplete="off">
+        <select id="fCategory">
+          <option value="">Categoria: todas</option>
+          <option value="Pokemon">Pokémon</option>
+          <option value="Trainer">Treinador</option>
+          <option value="Energy">Energia</option>
+        </select>
+        <select id="fType">
+          <option value="">Tipo de energia: todos</option>
+          <option>Grass</option><option>Fire</option><option>Water</option>
+          <option>Lightning</option><option>Psychic</option><option>Fighting</option>
+          <option>Darkness</option><option>Metal</option><option>Dragon</option>
+          <option>Colorless</option>
+        </select>
+        <input id="fHp" type="number" min="0" step="10" placeholder="HP mínimo">
+        <select id="fSet"><option value="">Set: todos</option></select>
+        <button id="searchBtn" class="primary full">Buscar</button>
+      </div>
+      <div class="searchmeta" id="searchMeta">Digite um nome ou escolha filtros e clique em Buscar.</div>
+      <div class="grid" id="results"></div>
+      <div style="text-align:center;margin-top:.7rem">
+        <button id="moreBtn" style="display:none">Carregar mais</button>
+      </div>
+    </div>
+
+    <div class="panel deckbox">
+      <h2>Deck: <input id="deckName" value="Meu deck" style="width:9rem;padding:.15rem .4rem"></h2>
+      <div class="cats" id="deckCounts"></div>
+      <div id="deckStatus"></div>
+      <div id="deckList"></div>
+      <div class="deckactions">
+        <button id="saveDeckBtn">Salvar</button>
+        <select id="savedSel"><option value="">Decks salvos…</option></select>
+        <button id="delDeckBtn" class="danger">Apagar salvo</button>
+        <button id="clearDeckBtn" class="danger">Limpar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ META ============ -->
+<section id="tab-meta" class="tabpane">
+  <div class="panel">
+    <h2>Metagame atual (Standard)</h2>
+    <div class="attrib" id="metaAttrib"></div>
+    <div id="metaBody">Carregando…</div>
+  </div>
+</section>
+
+<!-- ============ IMPORT/EXPORT ============ -->
+<section id="tab-io" class="tabpane">
+  <div class="panel io">
+    <h2>Import / Export — formato Pokémon TCG Live / RK9</h2>
+    <p style="font-size:.9rem;color:var(--fg-dim)">Uma carta por linha: <code>4 Iono PAL 185</code>. Blocos Pokémon / Trainer / Energy são gerados no export e ignorados no import.</p>
+    <div class="row">
+      <button id="exportBtn" class="primary">Exportar deck atual</button>
+      <button id="copyBtn">Copiar</button>
+      <button id="importBtn" class="primary">Importar texto abaixo</button>
+    </div>
+    <textarea id="ioText" spellcheck="false" placeholder="Cole aqui uma lista para importar, ou clique em Exportar."></textarea>
+    <p id="ioMsg"></p>
+  </div>
+</section>
+</main>
+
+<!-- modal de detalhe da carta -->
+<dialog id="cardModal">
+  <div class="carddetail" id="cardDetailBody"></div>
+  <div style="text-align:right;margin-top:.8rem"><button onclick="cardModal.close()">Fechar</button></div>
+</dialog>
+
+<!-- modal decklist de referência do meta -->
+<dialog id="metaModal">
+  <div id="metaDetail"></div>
+  <div style="text-align:right;margin-top:.8rem"><button onclick="metaModal.close()">Fechar</button></div>
+</dialog>
+
+<!-- modal changelog -->
+<dialog id="logModal">
+  <h3>Changelog</h3>
+  <ul id="logList" style="margin:.6rem 0 0 1.2rem;font-size:.9rem"></ul>
+  <div style="text-align:right;margin-top:.8rem"><button onclick="logModal.close()">Fechar</button></div>
+</dialog>
+
+<footer>
+  Dados de cartas: <a href="https://tcgdex.dev" target="_blank" rel="noopener">TCGdex</a> ·
+  Metagame: <a href="https://limitlesstcg.com/decks" target="_blank" rel="noopener">Limitless TCG</a> (dados de terceiros) ·
+  Este site não é afiliado à The Pokémon Company.
+  <br><a href="#" id="logLink">v1.0.0 — changelog</a>
+</footer>
+
+<script>
+'use strict';
+
+/* =====================================================================
+ * CONFIG
+ * ===================================================================== */
+const CONFIG = {
+  API: 'https://api.tcgdex.net/v2/en',
+
+  // ROTAÇÃO DO STANDARD — ATUALIZAR AQUI quando a Pokémon anunciar nova rotação.
+  // Anúncio sai por volta de janeiro e vigora em abril (pokemon.com > News,
+  // buscar "Standard Format Rotation"). Em 10/abr/2026 a mark G saiu;
+  // Standard vigente = H, I, J (+ marks futuras conforme forem lançadas).
+  STANDARD_MARKS: ['H', 'I', 'J'],
+
+  // Séries usadas para montar o mapa de abreviações de set (export/import
+  // PTCGL). Cobre a era com regulation mark. Acrescentar novas séries aqui
+  // quando a Pokémon iniciar um novo bloco (depois de 'me').
+  ABBREV_SERIES: ['swsh', 'sv', 'me'],
+
+  CACHE_TTL_MS: 24 * 60 * 60 * 1000,       // 24h: banco de cartas e buscas
+  CACHE_TTL_SETS_MS: 30 * 24 * 60 * 60 * 1000, // 30d: sets mudam raramente
+  META_URL: 'meta.json',
+  MAX_RESULTS: 400,
+  PAGE_SIZE: 30,
+};
+
+const CHANGELOG = [
+  ['1.0.0 — 2026-07-15', 'Versão inicial: construtor com validação Standard/Expanded, meta viewer (Limitless) e import/export PTCGL.'],
+];
+
+/* =====================================================================
+ * VALIDAÇÃO DE REGRAS — funções puras, sem DOM, testáveis via ?test=1
+ * ===================================================================== */
+
+// Energia Básica: sem limite de cópias e sempre legal no Standard.
+// O TCGdex não tem um campo booleano "basic energy"; a detecção usa a
+// categoria + o padrão de nome oficial das 9 energias básicas.
+function isBasicEnergy(card) {
+  if (card.category !== 'Energy') return false;
+  return /^(Basic )?(Grass|Fire|Water|Lightning|Psychic|Fighting|Darkness|Metal|Fairy) Energy$/i
+    .test(card.name || '');
+}
+
+// ACE SPEC: identificada pela raridade ("ACE SPEC Rare" no TCGdex).
+function isAceSpec(card) {
+  return /ACE SPEC/i.test(card.rarity || '');
+}
+
+// Legalidade de UMA carta no formato.
+// Standard: decidido pela regulation mark (fonte da verdade local, ver
+// CONFIG.STANDARD_MARKS). Cartas antigas sem mark (reimpressões tipo Rare
+// Candy) usam o flag legal.standard do TCGdex como fallback.
+// Expanded: sem restrição de mark; usa legal.expanded quando presente
+// (cobre a banlist do formato).
+function isCardLegal(card, format, cfg) {
+  if (format === 'expanded') {
+    if (isBasicEnergy(card)) return true;
+    return card.legal ? card.legal.expanded !== false : true;
+  }
+  // standard
+  if (isBasicEnergy(card)) return true;
+  if (card.regulationMark) return cfg.STANDARD_MARKS.includes(card.regulationMark);
+  return !!(card.legal && card.legal.standard);
+}
+
+// entries: [{card, qty}] com card = objeto de detalhe do TCGdex.
+// Retorna { status: 'valido'|'incompleto'|'invalido', errors[], warnings[],
+//           counts:{pokemon,trainer,energy,total} }
+function validateDeck(entries, format, cfg) {
+  const errors = [], warnings = [];
+  const counts = { pokemon: 0, trainer: 0, energy: 0, total: 0 };
+
+  const byName = new Map();       // limite de cópias é POR NOME, não por impressão
+  let aceSpecs = [];
+
+  for (const { card, qty } of entries) {
+    counts.total += qty;
+    if (card.category === 'Pokemon') counts.pokemon += qty;
+    else if (card.category === 'Trainer') counts.trainer += qty;
+    else if (card.category === 'Energy') counts.energy += qty;
+
+    if (!isBasicEnergy(card)) {
+      byName.set(card.name, (byName.get(card.name) || 0) + qty);
+    }
+    if (isAceSpec(card)) aceSpecs.push({ name: card.name, qty });
+
+    if (!isCardLegal(card, format, cfg)) {
+      if (format === 'standard' && card.regulationMark) {
+        errors.push(`"${card.name}" (mark ${card.regulationMark}) está fora das regulation marks vigentes (${cfg.STANDARD_MARKS.join(', ')}).`);
+      } else {
+        errors.push(`"${card.name}" não é legal no formato ${format === 'standard' ? 'Standard' : 'Expanded'}.`);
+      }
+    }
+  }
+
+  for (const [name, total] of byName) {
+    if (total > 4) errors.push(`${total} cópias de "${name}" — o máximo é 4 (a ${total}ª cópia não é permitida).`);
+  }
+
+  const aceTotal = aceSpecs.reduce((s, a) => s + a.qty, 0);
+  if (aceTotal > 1) {
+    errors.push(`${aceTotal} cartas ACE SPEC (${aceSpecs.map(a => a.name).join(', ')}) — o limite é 1 por deck.`);
+  }
+
+  if (counts.total > 60) errors.push(`${counts.total} cartas — o deck deve ter exatamente 60 (${counts.total - 60} a mais).`);
+  else if (counts.total < 60) warnings.push(`${counts.total}/60 cartas — faltam ${60 - counts.total}.`);
+
+  let status = 'valido';
+  if (errors.length) status = 'invalido';
+  else if (counts.total !== 60) status = 'incompleto';
+  return { status, errors, warnings, counts };
+}
+
+/* =====================================================================
+ * CAMADA DE DADOS — fetch + cache (IndexedDB), TTL 24h, refresh manual
+ * ===================================================================== */
+const idb = {
+  _db: null,
+  open() {
+    if (this._db) return Promise.resolve(this._db);
+    return new Promise((res, rej) => {
+      const rq = indexedDB.open('deckbuilder', 1);
+      rq.onupgradeneeded = () => rq.result.createObjectStore('kv');
+      rq.onsuccess = () => { this._db = rq.result; res(this._db); };
+      rq.onerror = () => rej(rq.error);
+    });
+  },
+  async get(key) {
+    const db = await this.open();
+    return new Promise((res, rej) => {
+      const rq = db.transaction('kv').objectStore('kv').get(key);
+      rq.onsuccess = () => res(rq.result);
+      rq.onerror = () => rej(rq.error);
+    });
+  },
+  async set(key, val) {
+    const db = await this.open();
+    return new Promise((res, rej) => {
+      const tx = db.transaction('kv', 'readwrite');
+      tx.objectStore('kv').put(val, key);
+      tx.oncomplete = res; tx.onerror = () => rej(tx.error);
+    });
+  },
+  async clear() {
+    const db = await this.open();
+    return new Promise((res, rej) => {
+      const tx = db.transaction('kv', 'readwrite');
+      tx.objectStore('kv').clear();
+      tx.oncomplete = res; tx.onerror = () => rej(tx.error);
+    });
+  },
+};
+
+let forceRefresh = false;
+
+// Busca com cache. Em falha de rede devolve o cache vencido (stale) se
+// existir — a ferramenta nunca fica em branco por a fonte estar fora do ar.
+async function cachedFetch(url, ttl = CONFIG.CACHE_TTL_MS) {
+  const hit = forceRefresh ? null : await idb.get(url).catch(() => null);
+  if (hit && Date.now() - hit.t < ttl) return hit.v;
+  try {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error(`HTTP ${r.status} em ${url}`);
+    const v = await r.json();
+    idb.set(url, { t: Date.now(), v }).catch(() => {});
+    return v;
+  } catch (e) {
+    const stale = await idb.get(url).catch(() => null);
+    if (stale) {
+      showBanner('Fonte de dados indisponível — mostrando dados em cache de ' +
+        new Date(stale.t).toLocaleString('pt-BR') + '.');
+      return stale.v;
+    }
+    throw e;
+  }
+}
+
+// Pool simples para buscar detalhes de várias cartas sem estourar a API.
+async function fetchPool(items, fn, size = 8) {
+  const out = new Array(items.length);
+  let i = 0;
+  async function worker() {
+    while (i < items.length) {
+      const idx = i++;
+      out[idx] = await fn(items[idx]).catch(() => null);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(size, items.length) }, worker));
+  return out;
+}
+
+const getCard = id => cachedFetch(`${CONFIG.API}/cards/${id}`);
+const getSet  = id => cachedFetch(`${CONFIG.API}/sets/${id}`, CONFIG.CACHE_TTL_SETS_MS);
+
+// Sets do Pokémon TCG Pocket (app mobile) aparecem na busca do TCGdex mas
+// não valem no jogo físico/TCG Live — são excluídos de tudo.
+let pocketSetIds = null;
+async function getPocketSetIds() {
+  if (pocketSetIds) return pocketSetIds;
+  try {
+    const serie = await cachedFetch(`${CONFIG.API}/series/tcgp`, CONFIG.CACHE_TTL_SETS_MS);
+    pocketSetIds = new Set((serie.sets || []).map(s => s.id));
+  } catch { pocketSetIds = new Set(); }
+  return pocketSetIds;
+}
+const setIdOf = cardId => cardId.slice(0, cardId.lastIndexOf('-'));
+
+/* Mapa abreviação PTCGL <-> set TCGdex (ex.: "PAL" <-> swsh?/sv04...).
+ * Construído sob demanda a partir do campo abbreviation.official dos sets
+ * das séries em CONFIG.ABBREV_SERIES. Cache de 30 dias. */
+let abbrevMaps = null;
+async function ensureAbbrevMaps() {
+  if (abbrevMaps) return abbrevMaps;
+  const byAbbrev = new Map(), bySetId = new Map();
+  for (const serieId of CONFIG.ABBREV_SERIES) {
+    let serie;
+    try { serie = await cachedFetch(`${CONFIG.API}/series/${serieId}`, CONFIG.CACHE_TTL_SETS_MS); }
+    catch { continue; }
+    const sets = await fetchPool(serie.sets || [], s => getSet(s.id), 6);
+    for (const st of sets) {
+      if (!st) continue;
+      const ab = st.abbreviation && st.abbreviation.official;
+      if (ab) { byAbbrev.set(ab.toUpperCase(), st.id); bySetId.set(st.id, ab.toUpperCase()); }
+    }
+  }
+  abbrevMaps = { byAbbrev, bySetId };
+  return abbrevMaps;
+}
+
+/* =====================================================================
+ * ESTADO DO DECK
+ * ===================================================================== */
+const deck = new Map(); // cardId -> {card, qty}
+let currentFormat = localStorage.getItem('deck.format') || 'standard';
+
+function deckEntries() { return [...deck.values()]; }
+
+function persistDeck() {
+  const data = {
+    name: $('#deckName').value,
+    format: currentFormat,
+    cards: deckEntries().map(e => ({ id: e.card.id, qty: e.qty })),
+  };
+  localStorage.setItem('deck.current', JSON.stringify(data));
+}
+
+async function loadDeckData(data) {
+  deck.clear();
+  $('#deckName').value = data.name || 'Meu deck';
+  const cards = await fetchPool(data.cards || [], c => getCard(c.id));
+  (data.cards || []).forEach((c, i) => {
+    if (cards[i]) deck.set(c.id, { card: cards[i], qty: c.qty });
+  });
+  renderDeck();
+}
+
+function setQty(card, qty) {
+  if (qty <= 0) deck.delete(card.id);
+  else deck.set(card.id, { card, qty });
+  persistDeck();
+  renderDeck();
+  renderResultBadges();
+}
+
+/* =====================================================================
+ * UI — helpers
+ * ===================================================================== */
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c =>
+  ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+function showBanner(msg, isErr = false) {
+  const b = $('#banner');
+  b.textContent = msg;
+  b.className = isErr ? 'err' : '';
+  b.style.display = 'block';
+  clearTimeout(showBanner._t);
+  showBanner._t = setTimeout(() => { b.style.display = 'none'; }, 8000);
+}
+
+function cardImg(card, size = 'low') {
+  // Imagens TCGdex: {base}/{quality}.{ext}. Nem toda carta tem imagem.
+  return card.image ? `${card.image}/${size}.webp` : null;
+}
+
+/* =====================================================================
+ * BUSCA
+ * ===================================================================== */
+let searchResults = [];   // briefs filtrados
+let shownCount = 0;
+
+async function runSearch() {
+  const name = $('#fName').value.trim();
+  const category = $('#fCategory').value;
+  const type = $('#fType').value;
+  const hpMin = parseInt($('#fHp').value, 10) || 0;
+  const setId = $('#fSet').value;
+
+  if (!name && !category && !type && !setId) {
+    $('#searchMeta').textContent = 'Informe ao menos um filtro.';
+    return;
+  }
+  $('#searchMeta').innerHTML = '<span class="spin"></span> Buscando…';
+  $('#results').innerHTML = '';
+  $('#moreBtn').style.display = 'none';
+
+  try {
+    // Filtros name/category/types são aplicados server-side pelo TCGdex.
+    const qs = new URLSearchParams();
+    if (name) qs.set('name', name);
+    if (category) qs.set('category', category);
+    if (type) qs.set('types', type);
+    let briefs = await cachedFetch(`${CONFIG.API}/cards?${qs}`);
+    if (!Array.isArray(briefs)) briefs = [];
+
+    const pocket = await getPocketSetIds();
+    briefs = briefs.filter(b => !pocket.has(setIdOf(b.id)));
+    if (setId) briefs = briefs.filter(b => setIdOf(b.id) === setId);
+    briefs = briefs.slice(0, CONFIG.MAX_RESULTS);
+
+    // Filtro de HP exige o detalhe de cada carta (não existe no brief):
+    // busca com pool + cache e filtra localmente.
+    if (hpMin > 0) {
+      $('#searchMeta').innerHTML = '<span class="spin"></span> Filtrando por HP (' + briefs.length + ' cartas)…';
+      const details = await fetchPool(briefs, b => getCard(b.id));
+      briefs = briefs.filter((b, i) => details[i] && (details[i].hp || 0) >= hpMin);
+    }
+
+    searchResults = briefs;
+    shownCount = 0;
+    $('#searchMeta').textContent = briefs.length
+      ? `${briefs.length} carta(s) encontrada(s).`
+      : 'Nada encontrado com esses filtros.';
+    renderMoreResults();
+  } catch (e) {
+    $('#searchMeta').textContent = 'Erro ao buscar: ' + e.message;
+    showBanner('Falha ao consultar o banco de cartas (TCGdex). Tente novamente mais tarde.', true);
+  }
+}
+
+function renderMoreResults() {
+  const frag = document.createDocumentFragment();
+  const next = searchResults.slice(shownCount, shownCount + CONFIG.PAGE_SIZE);
+  for (const b of next) {
+    const tile = document.createElement('div');
+    tile.className = 'cardtile';
+    tile.dataset.id = b.id;
+    const img = cardImg(b);
+    tile.innerHTML = img
+      ? `<img loading="lazy" src="${esc(img)}" alt="${esc(b.name)}">`
+      : `<span>${esc(b.name)}<br><small>${esc(b.id)}</small></span>`;
+    tile.addEventListener('click', () => openCardModal(b.id));
+    frag.appendChild(tile);
+  }
+  shownCount += next.length;
+  $('#results').appendChild(frag);
+  $('#moreBtn').style.display = shownCount < searchResults.length ? '' : 'none';
+  renderResultBadges();
+}
+
+function renderResultBadges() {
+  $$('#results .cardtile').forEach(t => {
+    const e = deck.get(t.dataset.id);
+    let b = t.querySelector('.qtybadge');
+    if (e) {
+      if (!b) { b = document.createElement('span'); b.className = 'qtybadge'; t.appendChild(b); }
+      b.textContent = '×' + e.qty;
+    } else if (b) b.remove();
+  });
+}
+
+/* =====================================================================
+ * MODAL DE CARTA
+ * ===================================================================== */
+async function openCardModal(id) {
+  const body = $('#cardDetailBody');
+  body.innerHTML = '<span class="spin"></span> Carregando…';
+  cardModal.showModal();
+  let card;
+  try { card = await getCard(id); }
+  catch { body.textContent = 'Erro ao carregar a carta.'; return; }
+
+  const legalStd = isCardLegal(card, 'standard', CONFIG);
+  const legalExp = isCardLegal(card, 'expanded', CONFIG);
+  const img = cardImg(card, 'high');
+  const qty = deck.get(id)?.qty || 0;
+
+  body.innerHTML = `
+    ${img ? `<img src="${esc(img)}" alt="${esc(card.name)}">` : ''}
+    <div class="info">
+      <h3>${esc(card.name)}</h3>
+      <p>${esc(card.set?.name || '')} · ${esc(card.id)}${card.rarity ? ' · ' + esc(card.rarity) : ''}</p>
+      <p>Categoria: ${esc(card.category)}${card.hp ? ' · HP ' + card.hp : ''}${card.types ? ' · ' + card.types.join('/') : ''}</p>
+      <p>Regulation mark: <b>${esc(card.regulationMark || '— (sem mark)')}</b>
+         ${isAceSpec(card) ? ' · <b style="color:var(--warn)">ACE SPEC</b>' : ''}</p>
+      <p>
+        <span class="badge ${legalStd ? 'ok' : 'err'}">Standard: ${legalStd ? 'legal' : 'ilegal'}</span>
+        <span class="badge ${legalExp ? 'ok' : 'err'}">Expanded: ${legalExp ? 'legal' : 'ilegal'}</span>
+      </p>
+      <div class="qtyctl">
+        <button id="qMinus">−</button>
+        <b id="qVal">${qty}</b>
+        <button id="qPlus">＋</button>
+        <span style="color:var(--fg-dim);font-size:.85rem">no deck</span>
+      </div>
+    </div>`;
+
+  $('#qPlus').onclick = () => {
+    const cur = deck.get(id)?.qty || 0;
+    setQty(card, cur + 1);
+    $('#qVal').textContent = cur + 1;
+  };
+  $('#qMinus').onclick = () => {
+    const cur = deck.get(id)?.qty || 0;
+    if (cur > 0) { setQty(card, cur - 1); $('#qVal').textContent = cur - 1; }
+  };
+}
+
+/* =====================================================================
+ * RENDER DO DECK + VALIDAÇÃO AO VIVO
+ * ===================================================================== */
+function renderDeck() {
+  const entries = deckEntries();
+  const v = validateDeck(entries, currentFormat, CONFIG);
+
+  $('#deckCounts').innerHTML =
+    `<span>Pokémon <b>${v.counts.pokemon}</b></span>` +
+    `<span>Treinador <b>${v.counts.trainer}</b></span>` +
+    `<span>Energia <b>${v.counts.energy}</b></span>` +
+    `<span>Total <b>${v.counts.total}</b>/60</span>`;
+
+  const st = $('#deckStatus');
+  if (v.status === 'valido') {
+    st.className = 'ok'; st.innerHTML = '✔ Deck válido para ' + (currentFormat === 'standard' ? 'Standard' : 'Expanded') + '.';
+  } else {
+    st.className = v.status === 'invalido' ? 'err' : 'warn';
+    const msgs = [...v.errors, ...v.warnings];
+    st.innerHTML = (v.status === 'invalido' ? '✖ Deck inválido:' : '… Deck incompleto:') +
+      '<ul>' + msgs.map(m => `<li>${esc(m)}</li>`).join('') + '</ul>';
+  }
+
+  const groups = { Pokemon: [], Trainer: [], Energy: [] };
+  for (const e of entries) (groups[e.card.category] || (groups.Outros ??= [])).push(e);
+  const label = { Pokemon: 'Pokémon', Trainer: 'Treinador', Energy: 'Energia', Outros: 'Outros' };
+
+  let html = '';
+  for (const g of Object.keys(groups)) {
+    const list = groups[g];
+    if (!list || !list.length) continue;
+    list.sort((a, b) => a.card.name.localeCompare(b.card.name));
+    html += `<div class="deckgroup">${label[g]} (${list.reduce((s, e) => s + e.qty, 0)})</div>`;
+    for (const e of list) {
+      const legal = isCardLegal(e.card, currentFormat, CONFIG);
+      html += `<div class="deckline" data-id="${esc(e.card.id)}">
+        <button data-a="minus">−</button><b>${e.qty}</b><button data-a="plus">＋</button>
+        <span class="nm ${legal ? '' : 'illegal'}" data-a="open">${esc(e.card.name)}
+          <small>${esc(e.card.set?.id || '')} ${esc(e.card.localId || '')}${legal ? '' : ' · ilegal'}</small></span>
+        <button data-a="del" title="Remover">✕</button>
+      </div>`;
+    }
+  }
+  $('#deckList').innerHTML = html || '<p style="color:var(--fg-dim);font-size:.9rem">Deck vazio — busque cartas ao lado.</p>';
+}
+
+$('#deckList').addEventListener('click', ev => {
+  const btn = ev.target.closest('[data-a]');
+  if (!btn) return;
+  const line = ev.target.closest('.deckline');
+  const e = deck.get(line.dataset.id);
+  if (!e) return;
+  const a = btn.dataset.a;
+  if (a === 'plus') setQty(e.card, e.qty + 1);
+  else if (a === 'minus') setQty(e.card, e.qty - 1);
+  else if (a === 'del') setQty(e.card, 0);
+  else if (a === 'open') openCardModal(e.card.id);
+});
+
+/* ---- decks salvos (localStorage; nada sai do navegador) ---- */
+function savedDecks() { return JSON.parse(localStorage.getItem('deck.saved') || '{}'); }
+function refreshSavedSel() {
+  const sel = $('#savedSel');
+  const d = savedDecks();
+  sel.innerHTML = '<option value="">Decks salvos…</option>' +
+    Object.keys(d).sort().map(n => `<option>${esc(n)}</option>`).join('');
+}
+$('#saveDeckBtn').onclick = () => {
+  const name = $('#deckName').value.trim() || 'Sem nome';
+  const d = savedDecks();
+  d[name] = { name, cards: deckEntries().map(e => ({ id: e.card.id, qty: e.qty })) };
+  localStorage.setItem('deck.saved', JSON.stringify(d));
+  refreshSavedSel();
+  showBanner(`Deck "${name}" salvo neste navegador.`);
+};
+$('#savedSel').onchange = async ev => {
+  const d = savedDecks()[ev.target.value];
+  if (d) { await loadDeckData(d); persistDeck(); }
+};
+$('#delDeckBtn').onclick = () => {
+  const n = $('#savedSel').value;
+  if (!n) return;
+  const d = savedDecks(); delete d[n];
+  localStorage.setItem('deck.saved', JSON.stringify(d));
+  refreshSavedSel();
+};
+$('#clearDeckBtn').onclick = () => { deck.clear(); persistDeck(); renderDeck(); renderResultBadges(); };
+
+/* =====================================================================
+ * IMPORT / EXPORT — formato PTCGL/RK9: "4 Iono PAL 185"
+ * ===================================================================== */
+async function exportDeck() {
+  const { bySetId } = await ensureAbbrevMaps();
+  const groups = { Pokemon: [], Trainer: [], Energy: [] };
+  for (const e of deckEntries()) (groups[e.card.category] || groups.Trainer).push(e);
+  const head = { Pokemon: 'Pokémon', Trainer: 'Trainer', Energy: 'Energy' };
+  let out = [];
+  for (const g of ['Pokemon', 'Trainer', 'Energy']) {
+    const list = groups[g];
+    if (!list.length) continue;
+    out.push(`${head[g]}: ${list.reduce((s, e) => s + e.qty, 0)}`);
+    for (const e of list.sort((a, b) => a.card.name.localeCompare(b.card.name))) {
+      const setId = e.card.set?.id || setIdOf(e.card.id);
+      const ab = bySetId.get(setId) || setId.toUpperCase();
+      const num = String(parseInt(e.card.localId, 10) || e.card.localId);
+      out.push(`${e.qty} ${e.card.name} ${ab} ${num}`);
+    }
+    out.push('');
+  }
+  return out.join('\n').trim() + '\n';
+}
+
+// Aceita: "4 Iono PAL 185" | "8 Basic {P} Psychic Energy SVE 5" |
+// "4 Grass Energy" (energia básica sem set -> resolve no set SVE).
+async function importDeck(text) {
+  const { byAbbrev } = await ensureAbbrevMaps();
+  const lines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+  const wanted = [];   // {qty, name, setAb, num, raw}
+  const failures = [];
+
+  for (const raw of lines) {
+    if (/^(pok[eé]mon|trainer|energy)\s*[:：]/i.test(raw)) continue;
+    let m = raw.match(/^(\d+)\s+(.+?)\s+([A-Za-z][A-Za-z0-9-]{1,5})\s+(\d+[a-zA-Z]*)$/);
+    if (m) { wanted.push({ qty: +m[1], name: m[2], setAb: m[3].toUpperCase(), num: m[4], raw }); continue; }
+    m = raw.match(/^(\d+)\s+(?:Basic\s+)?(?:\{[A-Z]\}\s+)?((?:Grass|Fire|Water|Lightning|Psychic|Fighting|Darkness|Metal|Fairy)\s+Energy)$/i);
+    if (m) { wanted.push({ qty: +m[1], name: m[2], setAb: 'SVE', num: null, raw }); continue; }
+    failures.push(`Linha não reconhecida: "${raw}"`);
+  }
+
+  const resolved = [];
+  for (const w of wanted) {
+    // Nome "Basic {P} Psychic Energy" vira "Psychic Energy" para busca.
+    const cleanName = w.name.replace(/^Basic\s+/i, '').replace(/\{[A-Z]\}\s*/g, '').trim();
+    const setId = byAbbrev.get(w.setAb);
+    let card = null;
+    if (setId && w.num) {
+      // ids TCGdex às vezes têm zero à esquerda (sv05-035): tenta as duas formas.
+      card = await getCard(`${setId}-${w.num}`).catch(() => null);
+      if (!card) card = await getCard(`${setId}-${String(w.num).padStart(3, '0')}`).catch(() => null);
+    }
+    if (!card) {
+      // Fallback por nome (pega a impressão mais recente legal que achar).
+      try {
+        const briefs = await cachedFetch(`${CONFIG.API}/cards?name=${encodeURIComponent(cleanName)}`);
+        const pocket = await getPocketSetIds();
+        const exact = (briefs || []).filter(b =>
+          b.name.toLowerCase() === cleanName.toLowerCase() && !pocket.has(setIdOf(b.id)));
+        for (const b of exact.reverse()) {
+          const c = await getCard(b.id).catch(() => null);
+          if (c && isCardLegal(c, currentFormat, CONFIG)) { card = c; break; }
+          if (c && !card) card = c;
+        }
+      } catch { /* segue para failures */ }
+    }
+    if (card) resolved.push({ card, qty: w.qty });
+    else failures.push(`Carta não encontrada: "${w.raw}"`);
+  }
+
+  return { resolved, failures };
+}
+
+$('#exportBtn').onclick = async () => {
+  $('#ioMsg').textContent = 'Gerando (na primeira vez baixa a lista de sets)…';
+  try {
+    $('#ioText').value = await exportDeck();
+    $('#ioMsg').textContent = 'Lista exportada. Use "Copiar" e cole no Pokémon TCG Live.';
+  } catch (e) { $('#ioMsg').textContent = 'Erro ao exportar: ' + e.message; }
+};
+$('#copyBtn').onclick = async () => {
+  await navigator.clipboard.writeText($('#ioText').value);
+  $('#ioMsg').textContent = 'Copiado para a área de transferência.';
+};
+$('#importBtn').onclick = async () => {
+  const text = $('#ioText').value;
+  if (!text.trim()) { $('#ioMsg').textContent = 'Cole uma lista antes de importar.'; return; }
+  $('#ioMsg').innerHTML = '<span class="spin"></span> Importando…';
+  try {
+    const { resolved, failures } = await importDeck(text);
+    deck.clear();
+    for (const r of resolved) {
+      const prev = deck.get(r.card.id);
+      deck.set(r.card.id, { card: r.card, qty: (prev?.qty || 0) + r.qty });
+    }
+    persistDeck(); renderDeck(); renderResultBadges();
+    $('#ioMsg').textContent = `${resolved.length} linha(s) importada(s).` +
+      (failures.length ? '\nProblemas:\n- ' + failures.join('\n- ') : '');
+    if (resolved.length) switchTab('builder');
+  } catch (e) { $('#ioMsg').textContent = 'Erro ao importar: ' + e.message; }
+};
+
+/* =====================================================================
+ * META VIEWER — lê meta.json gerado por GitHub Action (fonte: Limitless TCG)
+ * ===================================================================== */
+let metaData = null;
+async function loadMeta() {
+  const body = $('#metaBody');
+  try {
+    metaData = await cachedFetch(CONFIG.META_URL, 6 * 60 * 60 * 1000);
+  } catch {
+    body.innerHTML = 'Dados de metagame indisponíveis no momento. ' +
+      'Veja direto em <a href="https://limitlesstcg.com/decks" target="_blank" rel="noopener">limitlesstcg.com/decks</a>.';
+    return;
+  }
+  $('#metaAttrib').innerHTML =
+    `Fonte: <a href="${esc(metaData.sourceUrl)}" target="_blank" rel="noopener">Limitless TCG</a> ` +
+    `(dados de terceiros, sem afiliação) · formato ${esc(metaData.format || '?')} · ` +
+    `atualizado em ${new Date(metaData.updated).toLocaleString('pt-BR')} · ` +
+    `win rate não é publicado na página-fonte; a coluna Share indica presença no meta.`;
+
+  body.innerHTML = `<table class="metatable"><thead>
+      <tr><th>#</th><th></th><th>Arquétipo</th><th>Pontos</th><th class="share">Share</th></tr>
+    </thead><tbody>` +
+    metaData.archetypes.map((a, i) => `
+      <tr data-i="${i}">
+        <td>${a.rank}</td>
+        <td>${(a.icons || []).map(u => `<img class="pk" src="${esc(u)}" alt="" loading="lazy">`).join('')}</td>
+        <td>${esc(a.name)}</td>
+        <td>${a.points ?? ''}</td>
+        <td class="share">${esc(a.share)}</td>
+      </tr>`).join('') +
+    '</tbody></table>' +
+    '<p class="attrib">Clique num arquétipo para ver uma decklist de referência de torneio recente.</p>';
+
+  body.querySelectorAll('tr[data-i]').forEach(tr =>
+    tr.addEventListener('click', () => openMetaDetail(+tr.dataset.i)));
+}
+
+function openMetaDetail(i) {
+  const a = metaData.archetypes[i];
+  const d = $('#metaDetail');
+  const ref = a.reference;
+  let listText = '';
+  if (ref && ref.cards && ref.cards.length) {
+    const groups = { 'Pokémon': [], 'Trainer': [], 'Energy': [] };
+    for (const c of ref.cards) (groups[c.category] || groups.Trainer).push(c);
+    for (const g of Object.keys(groups)) {
+      if (!groups[g].length) continue;
+      listText += `${g}: ${groups[g].reduce((s, c) => s + c.qty, 0)}\n`;
+      for (const c of groups[g]) listText += `${c.qty} ${c.name} ${c.set} ${c.number}\n`;
+      listText += '\n';
+    }
+  }
+  d.innerHTML = `<h3>${esc(a.name)}</h3>
+    <p class="attrib">${ref ? `Decklist de referência: ${esc(ref.player || '')} — ${esc(ref.tournament || '')}
+      · <a href="${esc(ref.url)}" target="_blank" rel="noopener">ver no Limitless</a>` : 'Sem decklist de referência disponível.'}</p>
+    ${listText ? `<textarea readonly>${esc(listText.trim())}</textarea>
+      <button class="primary" id="useRefBtn">Usar como ponto de partida no construtor</button>` : ''}`;
+  if (listText) {
+    $('#useRefBtn').onclick = async () => {
+      metaModal.close();
+      switchTab('io');
+      $('#ioText').value = listText.trim();
+      $('#importBtn').click();
+    };
+  }
+  metaModal.showModal();
+}
+
+/* =====================================================================
+ * INICIALIZAÇÃO / NAVEGAÇÃO
+ * ===================================================================== */
+function switchTab(name) {
+  $$('nav.tabs button').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+  $$('.tabpane').forEach(p => p.classList.toggle('active', p.id === 'tab-' + name));
+  if (name === 'meta' && !metaData) loadMeta();
+}
+$$('nav.tabs button').forEach(b => b.addEventListener('click', () => switchTab(b.dataset.tab)));
+
+$('#formatSel').value = currentFormat;
+$('#formatSel').onchange = ev => {
+  currentFormat = ev.target.value;
+  localStorage.setItem('deck.format', currentFormat);
+  persistDeck(); renderDeck();
+};
+
+$('#searchBtn').onclick = runSearch;
+$('#fName').addEventListener('keydown', ev => { if (ev.key === 'Enter') runSearch(); });
+$('#moreBtn').onclick = renderMoreResults;
+$('#deckName').addEventListener('change', persistDeck);
+
+$('#refreshBtn').onclick = async () => {
+  // Força revalidação: limpa o cache de dados (IndexedDB). Decks salvos
+  // ficam no localStorage e não são afetados.
+  await idb.clear();
+  abbrevMaps = null; pocketSetIds = null; metaData = null;
+  showBanner('Cache limpo — os próximos carregamentos buscarão dados novos.');
+  populateSets();
+  if ($('#tab-meta').classList.contains('active')) loadMeta();
+};
+
+$('#themeBtn').onclick = () => {
+  const t = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = t;
+  localStorage.setItem('deck.theme', t);
+};
+if (localStorage.getItem('deck.theme')) {
+  document.documentElement.dataset.theme = localStorage.getItem('deck.theme');
+}
+
+$('#logLink').onclick = ev => {
+  ev.preventDefault();
+  $('#logList').innerHTML = CHANGELOG.map(([v, d]) => `<li><b>${esc(v)}</b> — ${esc(d)}</li>`).join('');
+  logModal.showModal();
+};
+
+// Popular o select de sets com as séries da era atual (mais recentes primeiro).
+async function populateSets() {
+  try {
+    const sel = $('#fSet');
+    sel.innerHTML = '<option value="">Set: todos</option>';
+    for (const serieId of [...CONFIG.ABBREV_SERIES].reverse()) {
+      const serie = await cachedFetch(`${CONFIG.API}/series/${serieId}`, CONFIG.CACHE_TTL_SETS_MS);
+      for (const s of [...(serie.sets || [])].reverse()) {
+        const o = document.createElement('option');
+        o.value = s.id; o.textContent = s.name;
+        sel.appendChild(o);
+      }
+    }
+  } catch { /* select fica só com "todos"; busca continua funcionando */ }
+}
+
+async function init() {
+  populateSets();
+  const saved = localStorage.getItem('deck.current');
+  if (saved) {
+    try { await loadDeckData(JSON.parse(saved)); } catch { renderDeck(); }
+  } else renderDeck();
+  refreshSavedSel();
+}
+
+/* =====================================================================
+ * TESTES — abra a página com ?test=1 para rodar
+ * ===================================================================== */
+function runTests() {
+  const out = [];
+  let pass = 0, fail = 0;
+  const t = (desc, cond) => { cond ? pass++ : fail++; out.push(`${cond ? 'OK ' : 'FALHOU'} ${desc}`); };
+  const mk = (over = {}) => ({
+    id: over.id || 'sv99-001', name: 'Carta Teste', category: 'Pokemon',
+    regulationMark: 'H', rarity: 'Common', legal: { standard: true, expanded: true },
+    localId: '001', set: { id: 'sv99' }, ...over,
+  });
+  const cfg = { STANDARD_MARKS: ['H', 'I', 'J'] };
+  const fill = (n, over = {}) => ({ card: mk(over), qty: n });
+
+  // 60 exatas, tudo legal
+  let v = validateDeck([
+    fill(4, { name: 'A' }), fill(4, { id: 'x2', name: 'B' }), fill(4, { id: 'x3', name: 'C' }),
+    fill(48, { id: 'e1', name: 'Grass Energy', category: 'Energy', regulationMark: undefined }),
+  ], 'standard', cfg);
+  t('deck 60 válido => valido', v.status === 'valido');
+  t('contagem total 60', v.counts.total === 60);
+
+  v = validateDeck([fill(59, { name: 'Grass Energy', category: 'Energy' })], 'standard', cfg);
+  t('59 cartas => incompleto', v.status === 'incompleto' && v.warnings.length === 1);
+
+  v = validateDeck([fill(61, { name: 'Grass Energy', category: 'Energy' })], 'standard', cfg);
+  t('61 cartas => invalido', v.status === 'invalido');
+
+  v = validateDeck([fill(5, { name: 'Iono' })], 'standard', cfg);
+  t('5 cópias => erro citando a carta', v.errors.some(e => e.includes('Iono') && e.includes('4')));
+
+  v = validateDeck([fill(4, { name: 'Iono' })], 'standard', cfg);
+  t('4 cópias => sem erro de cópia', !v.errors.length);
+
+  v = validateDeck([
+    fill(2, { id: 'p1', name: 'Iono' }), fill(3, { id: 'p2', name: 'Iono' }),
+  ], 'standard', cfg);
+  t('cópias somadas entre impressões diferentes', v.errors.some(e => e.includes('Iono')));
+
+  v = validateDeck([fill(20, { name: 'Water Energy', category: 'Energy', regulationMark: undefined })], 'standard', cfg);
+  t('20 energias básicas => sem erro de cópias', !v.errors.some(e => e.includes('cópias')));
+
+  v = validateDeck([
+    fill(1, { id: 'a1', name: 'Prime Catcher', category: 'Trainer', rarity: 'ACE SPEC Rare' }),
+    fill(1, { id: 'a2', name: 'Maximum Belt', category: 'Trainer', rarity: 'ACE SPEC Rare' }),
+  ], 'standard', cfg);
+  t('2 ACE SPEC => erro com limite 1', v.errors.some(e => e.includes('ACE SPEC') && e.includes('1')));
+
+  v = validateDeck([fill(1, { rarity: 'ACE SPEC Rare' })], 'standard', cfg);
+  t('1 ACE SPEC => ok', !v.errors.some(e => e.includes('ACE SPEC')));
+
+  v = validateDeck([fill(1, { regulationMark: 'G', name: 'Carta G' })], 'standard', cfg);
+  t('mark G no Standard => erro de mark', v.errors.some(e => e.includes('mark G')));
+
+  v = validateDeck([fill(1, { regulationMark: 'G', legal: { standard: false, expanded: true } })], 'expanded', cfg);
+  t('mark G no Expanded => legal', !v.errors.length);
+
+  v = validateDeck([fill(1, { regulationMark: 'G', legal: { standard: false, expanded: false }, name: 'Banida' })], 'expanded', cfg);
+  t('banida no Expanded (legal.expanded=false) => erro', v.errors.some(e => e.includes('Banida')));
+
+  v = validateDeck([fill(1, {
+    name: 'Rare Candy', category: 'Trainer', regulationMark: undefined, legal: { standard: true, expanded: true },
+  })], 'standard', cfg);
+  t('reimpressão sem mark com legal.standard => ok', !v.errors.length);
+
+  t('isBasicEnergy: "Grass Energy"', isBasicEnergy({ category: 'Energy', name: 'Grass Energy' }));
+  t('isBasicEnergy: "Basic Fire Energy"', isBasicEnergy({ category: 'Energy', name: 'Basic Fire Energy' }));
+  t('isBasicEnergy: energia especial não conta', !isBasicEnergy({ category: 'Energy', name: 'Jet Energy' }));
+  t('isBasicEnergy: Pokémon não conta', !isBasicEnergy({ category: 'Pokemon', name: 'Grass Energy' }));
+  t('isAceSpec por raridade', isAceSpec({ rarity: 'ACE SPEC Rare' }) && !isAceSpec({ rarity: 'Rare' }));
+
+  const el = $('#testResults');
+  el.style.display = 'block';
+  el.textContent = `Testes: ${pass} OK, ${fail} FALHOU\n\n` + out.join('\n');
+  return fail === 0;
+}
+
+if (new URLSearchParams(location.search).get('test') === '1') runTests();
+init();
+</script>
+</body>
+</html>

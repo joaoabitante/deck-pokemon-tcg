@@ -1,0 +1,33 @@
+name: Atualizar metagame (meta.json)
+
+# 1x/dia. Se o parse quebrar (HTML da fonte mudou), o job falha e o site
+# continua servindo o meta.json anterior — nunca publica arquivo vazio.
+on:
+  schedule:
+    - cron: "17 9 * * *"   # 09:17 UTC = 06:17 BRT
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Gerar meta.json
+        run: node scripts/update-meta.mjs
+
+      - name: Commit se houver mudança
+        run: |
+          git config user.name "meta-bot"
+          git config user.email "actions@github.com"
+          git add meta.json
+          git diff --cached --quiet && echo "meta.json sem mudanças" && exit 0
+          git commit -m "meta: atualização automática $(date -u +%Y-%m-%d)"
+          git push
