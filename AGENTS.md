@@ -5,7 +5,7 @@
 
 ## Identidade
 - **Projeto:** construtor de decks de Pokémon TCG com validação de regras oficiais (Standard e Expanded) e visão do metagame.
-- **Repo:** git local (confirme o remote com `git remote -v` antes de push)
+- **Repo:** github.com/joaoabitante/deck-pokemon-tcg
 - **Domínio:** deck.joaoabitante.net
 - **Stack:** arquivo único `index.html`, vanilla JS, sem build; `meta.json` atualizado via GitHub Action (dados Limitless); cartas via TCGdex.
 
