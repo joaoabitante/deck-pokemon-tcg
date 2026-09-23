@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-22T14:01:34.006Z",
+ "updated": "2026-09-23T14:13:29.966Z",
  "source": "Limitless TCG",
  "sourceUrl": "https://limitlesstcg.com/decks",
  "format": "TEF-PBL",
@@ -176,21 +176,21 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "2",
+      "number": "10",
       "qty": 3,
       "name": "Fire Energy"
      },
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "5",
+      "number": "13",
       "qty": 3,
       "name": "Psychic Energy"
      },
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "7",
+      "number": "15",
       "qty": 2,
       "name": "Darkness Energy"
      }
@@ -377,35 +377,35 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "1",
+      "number": "9",
       "qty": 6,
       "name": "Grass Energy"
      },
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "5",
+      "number": "13",
       "qty": 3,
       "name": "Psychic Energy"
      },
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "6",
+      "number": "14",
       "qty": 2,
       "name": "Fighting Energy"
      },
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "4",
+      "number": "12",
       "qty": 2,
       "name": "Lightning Energy"
      },
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "3",
+      "number": "11",
       "qty": 1,
       "name": "Water Energy"
      }
@@ -626,7 +626,7 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "7",
+      "number": "15",
       "qty": 8,
       "name": "Darkness Energy"
      }
@@ -833,7 +833,7 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "5",
+      "number": "13",
       "qty": 2,
       "name": "Psychic Energy"
      },
@@ -1040,7 +1040,7 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "5",
+      "number": "13",
       "qty": 4,
       "name": "Psychic Energy"
      },
@@ -1219,7 +1219,7 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "8",
+      "number": "16",
       "qty": 17,
       "name": "Metal Energy"
      }
@@ -1413,7 +1413,7 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "1",
+      "number": "9",
       "qty": 4,
       "name": "Grass Energy"
      },
@@ -1613,7 +1613,7 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "1",
+      "number": "9",
       "qty": 1,
       "name": "Grass Energy"
      }
@@ -1765,7 +1765,7 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "5",
+      "number": "13",
       "qty": 3,
       "name": "Psychic Energy"
      },
@@ -1972,14 +1972,14 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "1",
+      "number": "9",
       "qty": 6,
       "name": "Grass Energy"
      },
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "5",
+      "number": "13",
       "qty": 3,
       "name": "Psychic Energy"
      },
@@ -1993,14 +1993,14 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "3",
+      "number": "11",
       "qty": 1,
       "name": "Water Energy"
      },
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "2",
+      "number": "10",
       "qty": 1,
       "name": "Fire Energy"
      }
@@ -2172,7 +2172,7 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "5",
+      "number": "13",
       "qty": 1,
       "name": "Psychic Energy"
      },
@@ -2337,7 +2337,7 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "6",
+      "number": "14",
       "qty": 13,
       "name": "Fighting Energy"
      }
@@ -2530,35 +2530,35 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "1",
+      "number": "9",
       "qty": 6,
       "name": "Grass Energy"
      },
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "6",
+      "number": "14",
       "qty": 2,
       "name": "Fighting Energy"
      },
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "4",
+      "number": "12",
       "qty": 2,
       "name": "Lightning Energy"
      },
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "5",
+      "number": "13",
       "qty": 2,
       "name": "Psychic Energy"
      },
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "3",
+      "number": "11",
       "qty": 1,
       "name": "Water Energy"
      }
@@ -2765,7 +2765,7 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "7",
+      "number": "15",
       "qty": 8,
       "name": "Darkness Energy"
      }
@@ -2951,7 +2951,7 @@
      {
       "category": "Energy",
       "set": "MEE",
-      "number": "1",
+      "number": "9",
       "qty": 13,
       "name": "Grass Energy"
      }
