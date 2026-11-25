@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T20:07:37.656Z",
+ "updated": "2026-11-25T19:13:25.955Z",
  "source": "Limitless TCG",
  "sourceUrl": "https://limitlesstcg.com/decks",
  "format": "TEF-DLR",
@@ -1511,10 +1511,10 @@
    "points": 92,
    "share": "3.09%",
    "reference": {
-    "url": "https://limitlesstcg.com/decks/list/31404",
+    "url": "https://limitlesstcg.com/decks/list/31698",
     "title": "Alakazam Dudunsparce",
     "tournament": "LAIC",
-    "player": "Daifu Guzmán",
+    "player": "Haruto Kamanaka",
     "cards": [
      {
       "category": "Pokémon",
@@ -1554,16 +1554,16 @@
      {
       "category": "Pokémon",
       "set": "JTG",
-      "number": "56",
-      "qty": 2,
-      "name": "Lillie's Clefairy ex"
+      "number": "121",
+      "qty": 1,
+      "name": "Dudunsparce ex"
      },
      {
       "category": "Pokémon",
-      "set": "DRI",
-      "number": "10",
-      "qty": 1,
-      "name": "Shaymin"
+      "set": "JTG",
+      "number": "56",
+      "qty": 2,
+      "name": "Lillie's Clefairy ex"
      },
      {
       "category": "Pokémon",
@@ -1580,6 +1580,13 @@
       "name": "Genesect"
      },
      {
+      "category": "Pokémon",
+      "set": "DRI",
+      "number": "10",
+      "qty": 1,
+      "name": "Shaymin"
+     },
+     {
       "category": "Trainer",
       "set": "PFL",
       "number": "87",
@@ -1590,14 +1597,14 @@
       "category": "Trainer",
       "set": "WHT",
       "number": "84",
-      "qty": 3,
+      "qty": 4,
       "name": "Hilda"
      },
      {
       "category": "Trainer",
       "set": "MEG",
       "number": "114",
-      "qty": 2,
+      "qty": 3,
       "name": "Boss's Orders"
      },
      {
@@ -1618,15 +1625,8 @@
       "category": "Trainer",
       "set": "PFL",
       "number": "94",
-      "qty": 3,
-      "name": "Wondrous Patch"
-     },
-     {
-      "category": "Trainer",
-      "set": "MEG",
-      "number": "125",
       "qty": 2,
-      "name": "Rare Candy"
+      "name": "Wondrous Patch"
      },
      {
       "category": "Trainer",
@@ -1634,6 +1634,13 @@
       "number": "168",
       "qty": 1,
       "name": "Sacred Ash"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "196",
+      "qty": 1,
+      "name": "Night Stretcher"
      },
      {
       "category": "Trainer",
@@ -1646,14 +1653,21 @@
       "category": "Trainer",
       "set": "JTG",
       "number": "151",
-      "qty": 3,
+      "qty": 2,
       "name": "Lillie's Pearl"
+     },
+     {
+      "category": "Trainer",
+      "set": "ASC",
+      "number": "181",
+      "qty": 1,
+      "name": "Air Balloon"
      },
      {
       "category": "Trainer",
       "set": "PFL",
       "number": "85",
-      "qty": 4,
+      "qty": 3,
       "name": "Battle Cage"
      },
      {
