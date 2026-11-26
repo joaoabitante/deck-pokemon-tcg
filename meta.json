@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T19:13:25.955Z",
+ "updated": "2026-11-26T18:58:33.969Z",
  "source": "Limitless TCG",
  "sourceUrl": "https://limitlesstcg.com/decks",
  "format": "TEF-DLR",
@@ -422,10 +422,10 @@
    "points": 265,
    "share": "8.89%",
    "reference": {
-    "url": "https://limitlesstcg.com/decks/list/31359",
+    "url": "https://limitlesstcg.com/decks/list/31708",
     "title": "N's Zoroark",
     "tournament": "LAIC",
-    "player": "Vinícius Fernandez",
+    "player": "Shun Inoue",
     "cards": [
      {
       "category": "Pokémon",
@@ -443,13 +443,6 @@
      },
      {
       "category": "Pokémon",
-      "set": "TWM",
-      "number": "95",
-      "qty": 2,
-      "name": "Munkidori"
-     },
-     {
-      "category": "Pokémon",
       "set": "ASC",
       "number": "155",
       "qty": 2,
@@ -457,17 +450,31 @@
      },
      {
       "category": "Pokémon",
-      "set": "SFA",
-      "number": "39",
-      "qty": 2,
-      "name": "Pecharunt ex"
+      "set": "JTG",
+      "number": "26",
+      "qty": 1,
+      "name": "N's Darumaka"
      },
      {
       "category": "Pokémon",
-      "set": "POR",
-      "number": "62",
+      "set": "JTG",
+      "number": "27",
       "qty": 1,
-      "name": "Meowth ex"
+      "name": "N's Darmanitan"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "95",
+      "qty": 1,
+      "name": "Munkidori"
+     },
+     {
+      "category": "Pokémon",
+      "set": "SFA",
+      "number": "39",
+      "qty": 1,
+      "name": "Pecharunt ex"
      },
      {
       "category": "Pokémon",
@@ -475,6 +482,13 @@
       "number": "142",
       "qty": 1,
       "name": "Fezandipiti ex"
+     },
+     {
+      "category": "Pokémon",
+      "set": "TWM",
+      "number": "131",
+      "qty": 1,
+      "name": "Tatsugiri"
      },
      {
       "category": "Pokémon",
@@ -499,16 +513,9 @@
      },
      {
       "category": "Trainer",
-      "set": "POR",
-      "number": "76",
-      "qty": 2,
-      "name": "Judge"
-     },
-     {
-      "category": "Trainer",
       "set": "SSP",
       "number": "170",
-      "qty": 1,
+      "qty": 2,
       "name": "Cyrano"
      },
      {
@@ -520,6 +527,13 @@
      },
      {
       "category": "Trainer",
+      "set": "POR",
+      "number": "76",
+      "qty": 1,
+      "name": "Judge"
+     },
+     {
+      "category": "Trainer",
       "set": "TEF",
       "number": "144",
       "qty": 4,
@@ -527,30 +541,37 @@
      },
      {
       "category": "Trainer",
-      "set": "MEG",
-      "number": "131",
+      "set": "CRI",
+      "number": "83",
       "qty": 4,
-      "name": "Ultra Ball"
-     },
-     {
-      "category": "Trainer",
-      "set": "JTG",
-      "number": "153",
-      "qty": 4,
-      "name": "N's PP Up"
+      "name": "Transformation Tome"
      },
      {
       "category": "Trainer",
       "set": "POR",
       "number": "81",
-      "qty": 2,
+      "qty": 3,
       "name": "Poké Pad"
+     },
+     {
+      "category": "Trainer",
+      "set": "JTG",
+      "number": "153",
+      "qty": 3,
+      "name": "N's PP Up"
+     },
+     {
+      "category": "Trainer",
+      "set": "MEG",
+      "number": "131",
+      "qty": 2,
+      "name": "Ultra Ball"
      },
      {
       "category": "Trainer",
       "set": "ASC",
       "number": "196",
-      "qty": 2,
+      "qty": 1,
       "name": "Night Stretcher"
      },
      {
@@ -576,10 +597,10 @@
      },
      {
       "category": "Trainer",
-      "set": "DRI",
-      "number": "180",
+      "set": "JTG",
+      "number": "152",
       "qty": 2,
-      "name": "Team Rocket's Watchtower"
+      "name": "N's Castle"
      },
      {
       "category": "Trainer",
@@ -587,13 +608,6 @@
       "number": "177",
       "qty": 1,
       "name": "Gravity Mountain"
-     },
-     {
-      "category": "Trainer",
-      "set": "JTG",
-      "number": "152",
-      "qty": 1,
-      "name": "N's Castle"
      },
      {
       "category": "Energy",
@@ -980,10 +994,10 @@
    "points": 135,
    "share": "4.53%",
    "reference": {
-    "url": "https://limitlesstcg.com/decks/list/31370",
+    "url": "https://limitlesstcg.com/decks/list/31704",
     "title": "Mega Excadrill",
     "tournament": "LAIC",
-    "player": "Cameron Ware",
+    "player": "Shingo Kawamura",
     "cards": [
      {
       "category": "Pokémon",
@@ -1029,24 +1043,10 @@
      },
      {
       "category": "Pokémon",
-      "set": "POR",
-      "number": "55",
+      "set": "TEF",
+      "number": "78",
       "qty": 1,
-      "name": "Mega Skarmory ex"
-     },
-     {
-      "category": "Pokémon",
-      "set": "ASC",
-      "number": "142",
-      "qty": 1,
-      "name": "Fezandipiti ex"
-     },
-     {
-      "category": "Pokémon",
-      "set": "DRI",
-      "number": "10",
-      "qty": 1,
-      "name": "Shaymin"
+      "name": "Flutter Mane"
      },
      {
       "category": "Trainer",
@@ -1064,9 +1064,16 @@
      },
      {
       "category": "Trainer",
+      "set": "MEG",
+      "number": "114",
+      "qty": 3,
+      "name": "Boss's Orders"
+     },
+     {
+      "category": "Trainer",
       "set": "POR",
       "number": "76",
-      "qty": 3,
+      "qty": 1,
       "name": "Judge"
      },
      {
@@ -1078,6 +1085,13 @@
      },
      {
       "category": "Trainer",
+      "set": "SVI",
+      "number": "186",
+      "qty": 4,
+      "name": "Pokégear 3.0"
+     },
+     {
+      "category": "Trainer",
       "set": "TEF",
       "number": "144",
       "qty": 4,
@@ -1085,17 +1099,17 @@
      },
      {
       "category": "Trainer",
-      "set": "PFL",
-      "number": "91",
-      "qty": 3,
-      "name": "Jumbo Ice Cream"
+      "set": "SSP",
+      "number": "185",
+      "qty": 1,
+      "name": "Precious Trolley"
      },
      {
       "category": "Trainer",
-      "set": "MEG",
-      "number": "131",
+      "set": "PFL",
+      "number": "91",
       "qty": 1,
-      "name": "Ultra Ball"
+      "name": "Jumbo Ice Cream"
      },
      {
       "category": "Trainer",
@@ -1113,30 +1127,16 @@
      },
      {
       "category": "Trainer",
-      "set": "MEG",
-      "number": "130",
+      "set": "TWM",
+      "number": "153",
       "qty": 1,
-      "name": "Switch"
-     },
-     {
-      "category": "Trainer",
-      "set": "TEF",
-      "number": "152",
-      "qty": 1,
-      "name": "Hero's Cape"
-     },
-     {
-      "category": "Trainer",
-      "set": "SSP",
-      "number": "177",
-      "qty": 1,
-      "name": "Gravity Mountain"
+      "name": "Jamming Tower"
      },
      {
       "category": "Energy",
       "set": "MEE",
       "number": "16",
-      "qty": 16,
+      "qty": 17,
       "name": "Metal Energy"
      }
     ]
